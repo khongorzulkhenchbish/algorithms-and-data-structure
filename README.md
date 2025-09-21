@@ -1,2 +1,13 @@
-This repo contains the solutions for the most occurred problems for interviews from Leetcode level medium. 
-In each solution, we estimated the time and space complexity.
+## NEETCODE 75
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
+|21. Merge Two Sorted Lists|Linked List|Easy|Imagine: changing the arrow directions, iterate both lists, move the pointers to the next if the element is merged|
+|141. Linked List Cycle|Linked List, Floyd's Tortoise and Hare|Easy|Slow and Fast pointer to move ahead, check if on the same node each time|
+|141. Linked List Cycle|Linked List, HashMap|Easy|Iterate, store the node if not seen, return true if node was seen|
+|143. Reorder List|Linked List manipulation|Medium|Find middle point, revert the second part, later iterate both parallelly|
+|19. Remove Nth Node From End of List|Linked List, two pointers|Medium|Set pointers n place apart, iterate paralllelly till the end, left.next=left.next.next|
+|23. Merge k Sorted Lists|Linked List, divide and conquer|Hard|Similar approach to 21 but more optimal approach needed|
+## NEETCODE 150
+| Problem Name | Solution |
+|---------|---------|
+| a       | b       |
