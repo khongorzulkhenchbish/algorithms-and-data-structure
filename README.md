@@ -7,6 +7,7 @@
 |143. Reorder List|Linked List manipulation|Medium|Find middle point, revert the second part, later iterate both parallelly|
 |19. Remove Nth Node From End of List|Linked List, two pointers|Medium|Set pointers n place apart, iterate paralllelly till the end, left.next=left.next.next|
 |23. Merge k Sorted Lists|Linked List, divide and conquer|Hard|Similar approach to 21 but more optimal approach needed|
+|300. Longest Increasing Subsequence|Dynamic Programming, cache|Medium|Start backwards, for every i, count the rest of j such num[i]<num[j] and cache[i]=max(cache[i], cache[j]+1)|
 ## NEETCODE 150
 | Problem Name | Solution |
 |---------|---------|
