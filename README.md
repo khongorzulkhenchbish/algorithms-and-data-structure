@@ -1,4 +1,4 @@
-## NEETCODE 75
+## BlIND 75
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |21. Merge Two Sorted Lists|Linked List|Easy|Imagine: changing the arrow directions, iterate both lists, move the pointers to the next if the element is merged|
@@ -11,7 +11,10 @@
 |53. Max Subarray|Greedy, Dynamic Programming|Medium|Kadane's algorithm, use 2 variable one for final max sum and other for every subarray sum|
 |57. Insert Interval|Array, Interval|Medium|First merge smaller and separate arrays, then the rest will be always start_a <= end_b, after that do the first loop once more.|
 |778. Swim in Rising Water|Binary Search, DFS|Hard|Start from the answer. Assuming the target value t' exist in range [0, n^2-1], check from the range if path exist for grid elem where cell values are less than taken t'|
-## NEETCODE 150
+|48. Rotate Image|Math, Matrix|Medium|First transpose, swap symmetric cells at each step. Then swap elements horizantally. In both of these, trick is to avoid reverting the swappes by swapping again|
+
+
+## BLIND 150
 | Problem Name | Solution |
 |---------|---------|
 | a       | b       |
