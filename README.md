@@ -12,6 +12,7 @@
 |57. Insert Interval|Array, Interval|Medium|First merge smaller and separate arrays, then the rest will be always start_a <= end_b, after that do the first loop once more.|
 |778. Swim in Rising Water|Binary Search, DFS|Hard|Start from the answer. Assuming the target value t' exist in range [0, n^2-1], check from the range if path exist for grid elem where cell values are less than taken t'|
 |48. Rotate Image|Math, Matrix|Medium|First transpose, swap symmetric cells at each step. Then swap elements horizantally. In both of these, trick is to avoid reverting the swappes by swapping again|
+|54. Spiral Matrix|Matrix, Simulation|Medium|Fix 4 corners points, left, right, top, bottom, then run iterator i,j for row,cols. update the corners after every row,col iteration|
 
 
 ## BLIND 150
