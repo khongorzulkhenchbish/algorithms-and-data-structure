@@ -3,28 +3,20 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        #List keep track of which columns are 0
-        colSet = set()
+        #List keep track of which rows/columns are 0
+        R = set()
+        C = set()
         
-        
-        #List keep track of which rows are 0
-        rowSet = set()
-        
-        # Iterate through matrix and find zeroes
-        for row in range(len(matrix)): #Row index
-            for col in range(len(matrix[0])): #Column index
-                if matrix[row][col] == 0: #Check matrix value is 0
-                    colSet.add(col) #Add column number to set
-                    rowSet.add(row) #Add row number to set
-    
-        
-        #Change column numbers to 0
-        for colIndex in colSet: 
-            for row in range(len(matrix)): 
-                matrix[row][colIndex] = 0
-        
-        #Change rows of matrix
-        for rowIndex in rowSet: 
-            matrix[rowIndex] = [0] * len(matrix[rowIndex])
-            
-        print(matrix)
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j]==0:
+                    R.add(i)
+                    C.add(j)
+                    
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if i in R or j in C:    # if current item is in the row or column that contains 0, then set it to 0
+                    matrix[i][j]=0
+                
+        return matrix
+        # Space: O(m+n), Time: O(2*m*n)
