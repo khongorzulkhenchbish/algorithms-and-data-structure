@@ -14,6 +14,7 @@
 |48. Rotate Image|Math, Matrix|Medium|First transpose, swap symmetric cells at each step. Then swap elements horizantally. In both of these, trick is to avoid reverting the swappes by swapping again|
 |54. Spiral Matrix|Matrix, Simulation|Medium|Fix 4 corners points, left, right, top, bottom, then run iterator i,j for row,cols. update the corners after every row,col iteration|
 |73. Set Matrix Zeroes|Matrix, Hash Table|Medium|Use set for first collecting the row,cols with 0s. Then later remove those r,c in the set|
+|191. Number of 1 bits|Bit Manipulation|Easy|Shift the bits one by one to the right, check if the (last bit & 1), then inc counter|
 
 
 ## BLIND 150
