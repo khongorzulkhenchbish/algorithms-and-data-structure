@@ -15,6 +15,7 @@
 |54. Spiral Matrix|Matrix, Simulation|Medium|Fix 4 corners points, left, right, top, bottom, then run iterator i,j for row,cols. update the corners after every row,col iteration|
 |73. Set Matrix Zeroes|Matrix, Hash Table|Medium|Use set for first collecting the row,cols with 0s. Then later remove those r,c in the set|
 |191. Number of 1 bits|Bit Manipulation|Easy|Shift the bits one by one to the right, check if the (last bit & 1), then inc counter|
+|338. Counting bits|Bit Manipulation, Dynamic Programming|Easy|Find out the pattern to re-use the previous counted ones in the bit representation|
 
 
 ## BLIND 150
