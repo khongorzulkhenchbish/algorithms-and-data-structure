@@ -16,7 +16,7 @@
 |73. Set Matrix Zeroes|Matrix, Hash Table|Medium|Use set for first collecting the row,cols with 0s. Then later remove those r,c in the set|
 |191. Number of 1 bits|Bit Manipulation|Easy|Shift the bits one by one to the right, check if the (last bit & 1), then inc counter|
 |338. Counting bits|Bit Manipulation, Dynamic Programming|Easy|Find out the pattern to re-use the previous counted ones in the bit representation|
-
+|190. Reverse Bits|Bit Manipulation|Easy|at every step in the iteration, take the right most from n then add this to the reverse, while shifting reverse to the left at every step|
 
 ## BLIND 150
 | Problem Name | Solution |
