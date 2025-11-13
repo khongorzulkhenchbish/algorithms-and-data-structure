@@ -21,6 +21,8 @@
 
 
 ## System Design
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
 |1396. Design Underground System|Hashmap, System Design|Medium|Use two hastables, one for storing incomplete journeys, other for aggregating the total stops between start and final stations, total time spent in those stations. The average=(totaltime/totalstops)|
 
 
