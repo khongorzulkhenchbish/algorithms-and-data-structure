@@ -18,6 +18,7 @@
 |338. Counting bits|Bit Manipulation, Dynamic Programming|Easy|Find out the pattern to re-use the previous counted ones in the bit representation|
 |190. Reverse Bits|Bit Manipulation|Easy|at every step in the iteration, take the right most from n then add this to the reverse, while shifting reverse to the left at every step|
 |268. Missing Number|Array, Bit manipulation|Easy|diff between sum-without-missing-one and sum-with-missing-one should print missing one|
+|1396. Design Underground System|Hashmap, System Design|Medium|Use two hastables, one for storing incomplete journeys, other for aggregating the total stops between start and final stations, total time spent in those stations. The average=(totaltime/totalstops)|
 
 ## BLIND 150
 | Problem Name | Solution |
