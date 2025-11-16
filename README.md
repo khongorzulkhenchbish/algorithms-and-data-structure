@@ -50,6 +50,7 @@ Complete binary tree: the node should be filled from the left to right. if there
 |---------|---------|---------|---------|
 |215. kth largest element in the array|Heap|Medium|Use min-heap to store always at max k elements in space, the root of min-heap is the kth largest in the end. Use heapq.heappop(), heapq.heappush()|
 |680. valid palindrome II|Two pointers|Easy|Use two pointer to iterate from left and right at the same time. If there is no match use helper function to consider 2 scenarios. E.g: "abcaca" leads to removal of either b => "cac" OR c => "bca".|
+|199. binary tree right side view|Tree, BFS with deque|Medium|Traverse the tree level by level. At each level, find the rightmost val, then after the level is finished update the right view array. Use deque(), popleft()|
 
 
 
