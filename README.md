@@ -1,3 +1,23 @@
+## Pattern recognition
+
+Find the $k$-th smallest/largest element => Min-Heap / Max-Heap (Priority Queue), Quickselect (Partitioning), Trie
+
+Priority q has O(1) insertion and deletion time.
+With Heat insertion and deletion will be O(logN).
+Heap is a 
+1. COMPLETE binary tree, 
+2. where children nodes values are always higher than the parent node value.
+The max/min value of the heap can be attained on O(1) time.
+
+Min Heap: top element has the smallest value. From top to bottom, the node values increases.
+Max Heap: top element has the largest value. From top to bottom, the nodes values decreases.
+
+
+#### Tree
+Full binary tree: all of the nodes have either 0 or 2 offspring, excluding the leaf nodes.
+Complete binary tree: the node should be filled from the left to right. if there was a skip, then it is not complete anymore.
+
+
 ## BlIND 75
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
@@ -25,6 +45,10 @@
 |---------|---------|---------|---------|
 |1396. Design Underground System|Hashmap, System Design|Medium|Use two hastables, one for storing incomplete journeys, other for aggregating the total stops between start and final stations, total time spent in those stations. The average=(totaltime/totalstops)|
 
+## TOP 50
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
+|215. kth largest element in the array|Heap|Medium|Use min-heap to store always at max k elements in space, the root of min-heap is the kth largest in the end. Use heapq.heappop(), heapq.heappush()|
 
 ## BLIND 150
 | Problem Name | Solution |
