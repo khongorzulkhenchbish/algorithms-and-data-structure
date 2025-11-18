@@ -52,6 +52,7 @@ Complete binary tree: the node should be filled from the left to right. if there
 |680. valid palindrome II|Two pointers|Easy|Use two pointer to iterate from left and right at the same time. If there is no match use helper function to consider 2 scenarios. E.g: "abcaca" leads to removal of either b => "cac" OR c => "bca".|
 |199. binary tree right side view|Tree, BFS with deque|Medium|Traverse the tree level by level. At each level, find the rightmost val, then after the level is finished update the right view array. Use deque(), popleft()|
 |408. valid word abbreviation|Two Pointer|Easy|Use two pointers to iterate at the same time. return False immediately in leading 0s or unmatching chars, for the rest just go forward. Knowing isalpha(), isdigit() is necessary!|
+|1279. minimum remove to make valid parenthesis|String, Stack|Medium|Use two pass. First, accept those ")"s that appeared after "("s. In the second run, do the same, just in reversed order. Use list as string is immutable, list.reverse() does in-place reversion, "".join(list) joins list elements into string.|
 
 
 
