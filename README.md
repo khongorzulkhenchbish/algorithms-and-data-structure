@@ -55,6 +55,8 @@ Complete binary tree: the node should be filled from the left to right. if there
 |1279. minimum remove to make valid parenthesis|String, Stack|Medium|Use two pass. First, accept those ")"s that appeared after "("s. In the second run, do the same, just in reversed order. Use list as string is immutable, list.reverse() does in-place reversion, "".join(list) joins list elements into string.|
 |543. diameter of a binary tree|Tree, DFS|Medium|The diameter is the edge, not the vertices. At each subtree, maxdiameter is updated with sum of left and right subtrees maxd, while height is defined as max of the two then to be returned returned at end of the dfs calls.|
 |347. top k frequent elements|Hashmap, Bucket Sort|Medium|Create the hashmap={"num":countNum} then convert this into arr[countNum]=[num1, num2] where the frequency will be the index and the numbers will be the list values. Notice that this bucket will have at most n elements. This is the bucket sort, return those keys/nums while iterating backwards|
+|236. lowest common ancestor of a binary tree|Tree, DFS|Medium|Check every possible combination with DFS. Case 1: p and q are in separate branches => LCA node itself. Case 2: p is parent of q => p is the LCA. Case 3: q is parent of p => q is the LCA|
+
 
 
 
