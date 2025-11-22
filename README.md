@@ -17,6 +17,35 @@ Max Heap: top element has the largest value. From top to bottom, the nodes value
 Full binary tree: all of the nodes have either 0 or 2 offspring, excluding the leaf nodes.
 Complete binary tree: the node should be filled from the left to right. if there was a skip, then it is not complete anymore.
 
+#### 🌳 Why DFS on a binary tree uses O(height) space
+When you run DFS recursively, each recursive call goes **one level deeper** into the tree. Each recursive call is placed on the **call stack**.
+
+So the **maximum** number of stack frames at the same time equals: O(H). Let's say given tree
+
+        A
+       / \
+      B   C
+     / \
+    D   E
+         \
+          F
+
+Height of the tree: **3** if by edges.
+#### 🧠 What happens to the call stack during DFS?
+                            # Steps and call stacks at that step
+    dfs(A):                 # 1. Call stack: [A]
+        dfs(B):             # 2. Call stack: [A], [B]
+            dfs(D)          # 3. Call stack: [A], [B], [D] => equal to Height 3
+            dfs(E):         # 4. Call stack: [A], [B], [E] because we returned from [D]
+                dfs(F)      # 5. Call stack: [A], [B], [E], [F] => depth 4, the longest root→leaf path plus 1
+        dfs(C)              # 6. Call stack: [A], [B] it shrank back to 2 because we dropped [B, E, F]
+        ...
+
+
+Number of nodes = **4**\
+Height (in edges) = **3**
+
+So recursion used **O(height)** space. P.S: We know that either of them can be the space complexity. Just for overall view stating O(height) is better.
 
 ## BlIND 75
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
