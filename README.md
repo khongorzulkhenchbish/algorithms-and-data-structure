@@ -56,7 +56,9 @@ Complete binary tree: the node should be filled from the left to right. if there
 |543. diameter of a binary tree|Tree, DFS|Medium|The diameter is the edge, not the vertices. At each subtree, maxdiameter is updated with sum of left and right subtrees maxd, while height is defined as max of the two then to be returned returned at end of the dfs calls.|
 |347. top k frequent elements|Hashmap, Bucket Sort|Medium|Create the hashmap={"num":countNum} then convert this into arr[countNum]=[num1, num2] where the frequency will be the index and the numbers will be the list values. Notice that this bucket will have at most n elements. This is the bucket sort, return those keys/nums while iterating backwards|
 |236. lowest common ancestor of a binary tree|Tree, DFS|Medium|Check every possible combination with DFS. Case 1: p and q are in separate branches => LCA node itself. Case 2: p is parent of q => p is the LCA. Case 3: q is parent of p => q is the LCA|
-
+|235. lowest common ancestor of a binary search tree|Tree, DFS|Medium|Same as above except we check cases logn times due to the binary tree given in sorted order. Either in the left or right subtree or if it's in both, then the root itself is the LCA|
+|||||
+|125. valid palindrome|String, Two pointers|Easy|check the even and odd scenarios first, then filter out the non numberic and alphabetic chars, then use two pointers to start comparing from start and end, stop when start>end|
 
 
 
