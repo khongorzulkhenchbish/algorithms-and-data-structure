@@ -90,7 +90,10 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |125. valid palindrome|String, Two pointers|Easy|check the even and odd scenarios first, then filter out the non numberic and alphabetic chars, then use two pointers to start comparing from start and end, stop when start>end|
 
 
-
+## OTHERS
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
+|419. battleships in a board|Array, Matrix|Medium|In each row, col there can be more than 1 ships, at each step look back upwards and to the left and count the ship if it is the first one. Edge case: board[0][0]|
 
 ## BLIND 150
 | Problem Name | Solution |
