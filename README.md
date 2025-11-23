@@ -87,13 +87,15 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |236. lowest common ancestor of a binary tree|Tree, DFS|Medium|Check every possible combination with DFS. Case 1: p and q are in separate branches => LCA node itself. Case 2: p is parent of q => p is the LCA. Case 3: q is parent of p => q is the LCA|
 |235. lowest common ancestor of a binary search tree|Tree, DFS|Medium|Same as above except we check cases logn times due to the binary tree given in sorted order. Either in the left or right subtree or if it's in both, then the root itself is the LCA|
 |||||
-|125. valid palindrome|String, Two pointers|Easy|check the even and odd scenarios first, then filter out the non numberic and alphabetic chars, then use two pointers to start comparing from start and end, stop when start>end|
+
 
 
 ## OTHERS
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
+|125. valid palindrome|String, Two pointers|Easy|check the even and odd scenarios first, then filter out the non numberic and alphabetic chars, then use two pointers to start comparing from start and end, stop when start>end|
 |419. battleships in a board|Array, Matrix|Medium|In each row, col there can be more than 1 ships, at each step look back upwards and to the left and count the ship if it is the first one. Edge case: board[0][0]|
+|1002. find common characters|Array, Hashmap|Easy(not really)|Use 2 hashmap, one for collecting each words character frequency, another for updating after by comparing with the current word frequency. Space will not be more than 26 or O(1)|
 
 ## BLIND 150
 | Problem Name | Solution |
