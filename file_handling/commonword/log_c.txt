@@ -1,0 +1,2 @@
+[CRITICAL] The SERVER failed completely.
+Disk full.
