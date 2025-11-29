@@ -88,6 +88,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |235. lowest common ancestor of a binary search tree|Tree, DFS|Medium|Same as above except we check cases logn times due to the binary tree given in sorted order. Either in the left or right subtree or if it's in both, then the root itself is the LCA|
 |339. Nested List Weight Sum|Array, DFS|Easy-Medium|Use DFS on the array, use given class functions: .getInteger(), .getList()|
 |1004. Max Consecutive Ones III|Array, Sliding Window|Medium-Hard|Think of it as "What is the max subarray with k zeroes?". use sliding window, right to extend, left to shrink until we remove zero from the beginning and contain k zeroes|
+|1570. Dot Product of Two Sparse Vectors|Array, Hash Table, Two Pointers|Medium|Filter nonzeros values in array [[index, value],..]. Then use two pointers to iterate at the same time and calc dot product. (Try not to use hashmap approach, on larger input it takes time to create)|
 
 
 
