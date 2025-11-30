@@ -68,12 +68,6 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |190. Reverse Bits|Bit Manipulation|Easy|at every step in the iteration, take the right most from n then add this to the reverse, while shifting reverse to the left at every step|
 |268. Missing Number|Array, Bit manipulation|Easy|diff between sum-without-missing-one and sum-with-missing-one should print missing one|
 
-
-## System Design
-|Problem Name|DS & Algorithm|Difficulty|1-line solution|
-|---------|---------|---------|---------|
-|1396. Design Underground System|Hashmap, System Design|Medium|Use two hastables, one for storing incomplete journeys, other for aggregating the total stops between start and final stations, total time spent in those stations. The average=(totaltime/totalstops)|
-
 ## TOP 50
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
@@ -89,10 +83,13 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |235. lowest common ancestor of a binary search tree|Tree, DFS|Medium|Same as above except we check cases logn times due to the binary tree given in sorted order. Either in the left or right subtree or if it's in both, then the root itself is the LCA|
 |339. Nested List Weight Sum|Array, DFS|Easy-Medium|Use DFS on the array, use given class functions: .getInteger(), .getList()|
 |1004. Max Consecutive Ones III|Array, Sliding Window|Medium-Hard|Think of it as "What is the max subarray with k zeroes?". use sliding window, right to extend, left to shrink until we remove zero from the beginning and contain k zeroes|
+
+
+## System Design
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
+|1396. Design Underground System|Hashmap, Design|Medium|Use two hastables, one for storing incomplete journeys, other for aggregating the total stops between start and final stations, total time spent in those stations. The average=(totaltime/totalstops)|
 |1570. Dot Product of Two Sparse Vectors|Array, Hash Table, Two Pointers|Medium|Filter nonzeros values in array [[index, value],..]. Then use two pointers to iterate at the same time and calc dot product. (Try not to use hashmap approach, on larger input it takes time to create)|
-
-
-
 
 ## OTHERS
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
