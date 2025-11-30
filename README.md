@@ -79,6 +79,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |---------|---------|---------|---------|
 |215. kth largest element in the array|Heap|Medium|Use min-heap to store always at max k elements in space, the root of min-heap is the kth largest in the end. Use heapq.heappop(), heapq.heappush()|
 |680. valid palindrome II|Two pointers|Easy|Use two pointer to iterate from left and right at the same time. If there is no match use helper function to consider 2 scenarios. E.g: "abcaca" leads to removal of either b => "cac" OR c => "bca".|
+|827. Making A Large Island|DFS, Matrix|Easy-Hard ~ 2 medium|1. Precompute the area of the islands, replace each island cells with unique label, store the areas in separate hashmap {"label":area}. 2. Flip zeros one by one, check 4 directions, increment if it connects to islands by their prestored area|
 |199. binary tree right side view|Tree, BFS with deque|Medium|Traverse the tree level by level. At each level, find the rightmost val, then after the level is finished update the right view array. Use deque(), popleft()|
 |408. valid word abbreviation|Two Pointer|Easy|Use two pointers to iterate at the same time. return False immediately in leading 0s or unmatching chars, for the rest just go forward. Knowing isalpha(), isdigit() is necessary!|
 |1279. minimum remove to make valid parenthesis|String, Stack|Medium|Use two pass. First, accept those ")"s that appeared after "("s. In the second run, do the same, just in reversed order. Use list as string is immutable, list.reverse() does in-place reversion, "".join(list) joins list elements into string.|
@@ -89,6 +90,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |339. Nested List Weight Sum|Array, DFS|Easy-Medium|Use DFS on the array, use given class functions: .getInteger(), .getList()|
 |1004. Max Consecutive Ones III|Array, Sliding Window|Medium-Hard|Think of it as "What is the max subarray with k zeroes?". use sliding window, right to extend, left to shrink until we remove zero from the beginning and contain k zeroes|
 |1570. Dot Product of Two Sparse Vectors|Array, Hash Table, Two Pointers|Medium|Filter nonzeros values in array [[index, value],..]. Then use two pointers to iterate at the same time and calc dot product. (Try not to use hashmap approach, on larger input it takes time to create)|
+
 
 
 
