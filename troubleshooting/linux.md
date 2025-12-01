@@ -62,6 +62,17 @@ How do you look up something you **don't know**?
 
     use man <command>
 
+How do you **list open files**?
 
+    lsof +L1    # list files that have been deleted but are still open
     
+
+#### P95 latency
+is the 95th percentile of request response times, meaning 95% of all requests are completed in less than this amount of time, while 5% take longer.
+
+Example: If the P95 latency is 90 milliseconds, it means 95 out of 100 requests were faster than 90 ms, and 5 requests took longer than 90 ms.
+
+
+#### Kafka lag
+is the difference between the latest messages produced and the last messages consumed by a consumer group, indicating how far behind the consumer is in processing data. **High lag** means a **delay in message processing**, which can lead to performance issues, while **low lag** indicates **efficient processing**. Causes include high incoming traffic, slow processing, and data skew, and it can be managed by scaling consumers, tuning configurations, and optimizing processing logic.
 
