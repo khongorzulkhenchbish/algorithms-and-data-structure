@@ -14,3 +14,14 @@ Each **action** will give you new data:
 - it may answer a question, but raise a new one.
 - it may change the priority of your next move.
 
+### Proactive Resource Monitoring
+#### Set Thresholds & Alerts
+Establish clear thresholds and alerts for critical resource metrics. Key metrics to monitor include:
+- **CPU usage**: Set alerts for when CPU utilization consistently exceeds a certain percentage (e.g., 80%) for an extended period.
+- **Memory usage**: Define thresholds for high memory consumption or low free memory conditions.
+- **I/O wait**: Monitor disk I/O wait times and set alerts for when they surpass acceptable levels.
+- **Error rates**: Configure alerts for when error rates (e.g., 5xx responses for HTTP services) exceed normal baselines.
+- **Latency**: Set up alerts for when request or response latencies consistently exceed targets (e.g., 500ms).
+
+For example, you might configure an alert to trigger when a service's CPU usage exceeds 85% for more than 5 minutes. This would give you an early warning of potential resource saturation and allow you to investigate and take action before it leads to performance degradation or service unavailability.
+
