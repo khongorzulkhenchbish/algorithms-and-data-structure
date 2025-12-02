@@ -84,6 +84,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |235. lowest common ancestor of a binary search tree|Tree, DFS|Medium|Same as above except we check cases logn times due to the binary tree given in sorted order. Either in the left or right subtree or if it's in both, then the root itself is the LCA|
 |339. Nested List Weight Sum|Array, DFS|Easy-Medium|Use DFS on the array, use given class functions: .getInteger(), .getList()|
 |1004. Max Consecutive Ones III|Array, Sliding Window|Medium-Hard|Think of it as "What is the max subarray with k zeroes?". use sliding window, right to extend, left to shrink until we remove zero from the beginning and contain k zeroes|
+|2817. Minimum Absolutec Difference Between Elements With Constraint|Binary Search, Ordered Set|Medium|For every j, process nums[0:j-x] elements, find insertion point for nums[j], then calc min diff for left and right side elements for nums[j]|
 |246. Strobogrammatic Number|Hash Table, Two Pointers|Easy|Define a hash table where it contains the 180 rotated key,value pairs. Then use two pointer, iterate from both sides and check if one of the num is the rotated version of the other one|
 
 
