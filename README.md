@@ -86,7 +86,8 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |528. Random Pick with Weight|Binary Search, Prefix Sum, Randomized, Design|Medium|Store prefix_sums for each values and total_sum. Then when picking, get random number between [0, total_sum], use binary search to find the location of the index using the the prefix_sums list|
 |339. Nested List Weight Sum|Array, DFS|Easy-Medium|Use DFS on the array, use given class functions: .getInteger(), .getList()|
 |1004. Max Consecutive Ones III|Array, Sliding Window|Medium-Hard|Think of it as "What is the max subarray with k zeroes?". use sliding window, right to extend, left to shrink until we remove zero from the beginning and contain k zeroes|
-|2817. Minimum Absolutec Difference Between Elements With Constraint|Binary Search, Ordered Set|Medium|For every j, process nums[0:j-x] elements, find insertion point for nums[j], then calc min diff for left and right side elements for nums[j]|
+|986. Interval List Intersections|Array, Sweep Line, Two Pointers|Medium|Consider no overlapping and overlapping cases. If overlapping collect the [max(start1, start2), min(end1, end2)] overlaps. Then if first end less than second start, move pointer1. Else (If second end is less than first start), move pointer2.|
+|2817. Minimum Absolute Difference Between Elements With Constraint|Binary Search, Ordered Set|Medium|For every j, process nums[0:j-x] elements, find insertion point for nums[j], then calc min diff for left and right side elements for nums[j]|
 |246. Strobogrammatic Number|Hash Table, Two Pointers|Easy|Define a hash table where it contains the 180 rotated key,value pairs. Then use two pointer, iterate from both sides and check if one of the num is the rotated version of the other one|
 
 
