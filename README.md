@@ -91,6 +91,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |1047. Remove All Adjacent Duplicates In String|String, Stack|Easy|Iterate letters one by one, if find char that is similar to the prev, pop that from the stack. If not add in the stack. Stack will end up having unique items left.|
 |2817. Minimum Absolute Difference Between Elements With Constraint|Binary Search, Ordered Set|Medium|For every j, process nums[0:j-x] elements, find insertion point for nums[j], then calc min diff for left and right side elements for nums[j]|
 |246. Strobogrammatic Number|Hash Table, Two Pointers|Easy|Define a hash table where it contains the 180 rotated key,value pairs. Then use two pointer, iterate from both sides and check if one of the num is the rotated version of the other one|
+|2043. Simple Bank System|Array, Simulation, Design, Hash Table|Easy-Medium|Check the senders balance before transfering money or depositing. Nothing special|
 
 
 ## System Design
