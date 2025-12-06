@@ -1,3 +1,27 @@
+File system:
+
+|location|name|can write|note|
+|---------|---------|---------|---------|
+|/|root|||
+|/bin|binary|do not modify|contains essential cmd tools for the system during boot, 'ls', 'cp', 'mv', 'cat'... are located here. "/root" is under "/" and not same as "/"|
+|/sbin|system binary|do not modify|contains specialized system utilities, used by root or system adm|
+|/lib|library|do not modify|contains support files for bin, sbin. These file provides common functionality like reading files, handling I/O. lib32, lib64 - stores 32,64 bits library. Also it has kernel modules that is loaded into linux kernel on demand|
+|/usr|unix system resources|do not modify|to hold non-essential contains user space applications, installed programs. it mirrors /usr/bin, /usr/lib, /user/sbin|
+|/boot|boot|interacting with the devices can directly affect the hardware!|all the files needed for initial boot, grub.cfg tells the system to how to load the OS. contains initrd, inittramfs, GRUB|
+|/dev|device|do not modify|contains device files act as interfaces to hardware. /dev/sda - represent the first hard drive, /dev/null - virtual devices. 2 main types block devices - like hard drives, handles the data in chunks, Character devices - like keyboards, handles the data as stream of characters. These files are handled dynamically as hardware changes.|
+|/etc|et cetera, editable text config|allowed by sys admin|central location for system wide config files, from network settings to user accounts, to startup scripts to server configs. /etc/passwd - basic user info, /etc/fstab - how drives are mounted at boot|
+|/home|home|allowed by the user|keep user data separate from system files, user spec configs are hidden by default as ".", .bashrc for example. Root user has /root for their own home|
+|/media|media|can be edited|designed for usb, dvd removable devices, under /media/${volume} the user can access handled automatically by the system|
+|/mnt|mounting file systems|allowed by sys admin|reserved for manual temporary mounts, typically used by root user or advanced scripts|
+|/proc|processes|n/a|virtual filesystem, no real file, live interface to the linux kernel in running processes, contains process ids, system info files, /proc/cpuinfo, /proc/meminfo|
+|/sys|pseudo file system|n/a|dynamic interface between linux kernel and hardware|
+|/run|runtime|n/a|temporary runtime data used by the system applications right after the boot, these files disappears after reboot, /run/user, /run/lock|
+|/srv|service|n/a|data for services (shared with others) provided for systems are stored|
+|/var|variable|n/a|storing files that change frequently, /var/log - rotated,caches, /var/lib - important metadata, sensible infos are stored|
+|/tmp|temporary|n/a, writable by user though|used for lightweight temp data only|
+|/opt|optional|n/a|optional or 3rd party software is installed, /opt/google/chrome, safe space without interfering system files|
+
+
 How to check **kernel version** a system is currently running?
 
     $uname -a 
