@@ -17,7 +17,7 @@ File system:
 |/sys|pseudo file system|n/a|dynamic interface between linux kernel and hardware|
 |/run|runtime|n/a|temporary runtime data used by the system applications right after the boot, these files disappears after reboot, /run/user, /run/lock|
 |/srv|service|n/a|data for services (shared with others) provided for systems are stored|
-|/var|variable|n/a|storing files that change frequently, /var/log - rotated,caches, /var/lib - important metadata, sensible infos are stored|
+|/var|variable|n/a|storing files that change frequently, /var/log - rotated,var/log/cache, /var/lib - important metadata, sensible infos are stored|
 |/tmp|temporary|n/a, writable by user though|used for lightweight temp data only|
 |/opt|optional|n/a|optional or 3rd party software is installed, /opt/google/chrome, safe space without interfering system files|
 
@@ -42,6 +42,10 @@ How can you check systems' current **IP Address**?
 How do you check **free disk space**?
 
     $df -ah     # disk free, show all in human-readable format
+    $df -h /var  # shows partition usage
+    # sample output
+    Filesystem  Size  Used Avail Use% Mounted on
+    /dev/xvdf   100G   92G  8.0G  92%  /var
 
 How do you **manage services** on a system? (run, start, stop, reload service)
 
@@ -57,6 +61,15 @@ How would you check the **total size of a directory**'s content on disk?
 
     # folder tales 32kb space alltogether
     $ du file_handling/ -hs 32K  file_handling/
+
+    # find the largest top-level directories 
+    # could be that one of them taking the huge space
+    $ sudo du -h --max-depth=1 /var | sort -h | tail
+    # tail prints the last 10 directories
+    # sample output
+    13G  /var/lib
+    15G  /var/cache
+    67G  /var/log/payments-svc => taking the largest space
 
 How would you check for **open ports** on a Linux machine?
 
@@ -86,10 +99,41 @@ How do you look up something you **don't know**?
 
     use man <command>
 
-How do you **list open files**?
+How do you **list the largest** log files?
 
-    lsof +L1    # list files that have been deleted but are still open
+    $ ls -lhS /var/log/payments-svc | head
+    lhS - list humand-readable files in Sorted from largest to smallest order
+    | head - takes the output of prev command, then shows the first 10 lines by default
+    # sample output
+    -rw-r--r-- 1 root root 66G May  1 02:00 app.log
+    -rw-r--r-- 1 root root 8.3G Apr 30 00:15 app-2025-04-30.gz
+    ...
+
+How do you **list open files**? or **ghost files**?
+
+    $ lsof +L1    # list files that have been deleted but are still open
+    # example cmd
+    $ sudo lsof +L1 /var/log/payments-svc
+    # example output
+    No output.
+
+How to see the **crontab** for root to confirm whether any automated log‑rotation job is configured?
+
+    # this is an entry in the system's cron table (often /etc/crontab or a file in /etc/cron.d)
+    */5 * * * * root /usr/local/bin/rotate-logs.sh --config /etc/payments-log-config.json
+    # Min, Hour, Day, Month, Day of Week - scrip runs every 5 minutes 24/7
+    # it confirms a cron‑driven script.
+
+    # next, check if the script logged anything recently
+    $ grep rotate-logs /var/log/syslog | tail
+    - grep: Searches for lines matching a pattern.
+    - rotate-logs: The pattern being searched for (the name of the script).
+    - /var/log/syslog: The main system log file where cron job output and system messages are recorded.
+
+    # The last entry shows the script ran 4 minutes ago and exited 0, but no rotation happened. check the rotation script:
+    $ head -5 /usr/local/bin/rotate-logs.sh
     
+
 
 #### P95 latency
 is the 95th percentile of request response times, meaning 95% of all requests are completed in less than this amount of time, while 5% take longer.
