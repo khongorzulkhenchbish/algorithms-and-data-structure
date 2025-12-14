@@ -71,7 +71,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 ## TOP 50
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
-|215. kth largest element in the array|Heap|Medium|Use min-heap to store always at max k elements in space, the root of min-heap is the kth largest in the end. Use heapq.heappop(), heapq.heappush()|
+|215. kth largest element in the array|Heap|Medium|Use min-heap to store always at max k elements in space, the root of min-heap is the kth largest in the end. Use heapq.heappop(), heapq.heappush(), both time: O(logK)|
 |680. valid palindrome II|Two pointers|Easy|Use two pointer to iterate from left and right at the same time. If there is no match use helper function to consider 2 scenarios. E.g: "abcaca" leads to removal of either b => "cac" OR c => "bca".|
 |314. Binary Tree Vertical Order Traversal|BFS, Queue, Hashmap|Medium|Traverse the tree BFS, each time you go left, the column decreases, to the right, the column increases. Store the values into the hashmap {column:[vals]}. Use constant variables to store the range so you can traverse through the values in the end.|
 |827. Making A Large Island|DFS, Matrix|Easy-Hard ~ 2 medium|1. Precompute the area of the islands, replace each island cells with unique label, store the areas in separate hashmap {"label":area}. 2. Flip zeros one by one, check 4 directions, increment if it connects to islands by their prestored area|

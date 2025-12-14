@@ -19,9 +19,17 @@ class Solution:
                 heapq.heappush(min_heap, num)
             else:
                 # remove elem then push another when storage length exceeds k
-                heapq.heappush(min_heap, num)
-                heapq.heappop(min_heap)
-                # alternative => heapq.heappushpop(min_heap, num)
+                heapq.heappushpop(min_heap, num)
         
         # root the is k-th from the largest
         return min_heap[0]
+        """
+        nums = [3,2,3,1,2,4,5,5,6], k = 4
+        operation       | min_heap      | kth largest 
+        push 3,2,3,1    | [1,2,3,3]     | 1
+        pushpop 2       | [2,2,3,3]     | 2
+        pushpop 4       | [2,3,3,4]     | 2
+        pushpop 5       | [3,3,4,5]     | 3
+        pushpop 5       | [3,4,5,5]     | 3
+        pushpop 6       | [4,5,5,6]     | 4
+        """
