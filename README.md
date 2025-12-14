@@ -100,6 +100,7 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |246. Strobogrammatic Number|Hash Table, Two Pointers|Easy|Define a hash table where it contains the 180 rotated key,value pairs. Then use two pointer, iterate from both sides and check if one of the num is the rotated version of the other one|
 |2043. Simple Bank System|Array, Simulation, Design, Hash Table|Easy-Medium|Check the senders balance before transfering money or depositing. Nothing special|
 |173. Binary Search Tree Iterator|Stack, Tree, Design|Medium|Use stack to store the left most nodes. Pop 1-by-1, then before returning, add the right childs left most items in the stack.|
+|703. Kth Largest Element in a Stream|Heap, Design|Easy|Initialize the min_heap with k elements using the add fuction. heapq.pop and heap.push both takes time: O(logN)|
 
 
 ## Design
