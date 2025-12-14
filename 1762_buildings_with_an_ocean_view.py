@@ -1,6 +1,25 @@
 class Solution:
     def findBuildings(self, heights: List[int]) -> List[int]:
         """
+        Constraint: iterate from the left only!
+        Use monotonic stack. The diff between monotonic stack vs normal stack
+        is the order. If it is continuely inc/decreasing.
+        Time: O(N), Space: O(N)
+        """
+        inc_stack = []
+        for i in range(len(heights)):
+            # <= because when [2,2,2,2] => then only the 3rd indexed 2 can see the ocean 
+            while inc_stack and heights[inc_stack[-1]] <= heights[i]:
+                # because heights[i] will block the top element
+                inc_stack.pop()
+
+            # either the stack is empty, or the elems can see the ocean
+            inc_stack.append(i)
+        
+        return inc_stack
+
+        """
+        No Constraint
         Time: O(n), Space: O(N) if we have all having ocean view
         What if instead we look from the right to the left and only add those higher 
         than our max?
