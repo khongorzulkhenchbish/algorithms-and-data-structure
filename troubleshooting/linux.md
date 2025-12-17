@@ -134,6 +134,13 @@ How to see the **crontab** for root to confirm whether any automated log‑rotat
     $ head -5 /usr/local/bin/rotate-logs.sh
     
 
+How do you see how long it took to load the application?
+
+    $ uptime
+    # it shows the 1,5 and 15 minutes average by default
+
+The latency is higher ...
+- 
 
 #### P95 latency
 is the 95th percentile of request response times, meaning 95% of all requests are completed in less than this amount of time, while 5% take longer.
