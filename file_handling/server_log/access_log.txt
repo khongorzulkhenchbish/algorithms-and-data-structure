@@ -1,0 +1,13 @@
+10.0.0.1 - - [17/Dec/2025:10:00:01 +0000] "GET /api/v1/profile HTTP/1.1" 200 1234
+10.0.0.2 - - [17/Dec/2025:10:00:05 +0000] "GET /search/query?q=term HTTP/1.1" 200 567
+10.0.0.3 - - [17/Dec/2025:10:00:10 +0000] "POST /api/v1/user/create HTTP/1.1" 403 250
+10.0.0.4 - - [17/Dec/2025:10:00:15 +0000] "GET /app/legacy/feed HTTP/1.1" 404 150
+10.0.0.5 - - [17/Dec/2025:10:00:20 +0000] "GET /api/v1/profile HTTP/1.1" 200 1234
+10.0.0.3 - - [17/Dec/2025:10:00:25 +0000] "POST /api/v1/user/create HTTP/1.1" 403 250
+10.0.0.6 - - [17/Dec/2025:10:00:30 +0000] "GET /app/legacy/feed HTTP/1.1" 404 150
+10.0.0.7 - - [17/Dec/2025:10:00:35 +0000] "GET /admin/metrics HTTP/1.1" 500 100
+10.0.0.8 - - [17/Dec/2025:10:00:40 +0000] "GET /app/legacy/feed HTTP/1.1" 404 150
+10.0.0.9 - - [17/Dec/2025:10:00:45 +0000] "GET /admin/metrics HTTP/1.1" 500 100
+10.0.0.10 - - [17/Dec/2025:10:00:50 +0000] "GET /settings/billing HTTP/1.1" 401 100
+10.0.0.11 - - [17/Dec/2025:10:00:55 +0000] "GET /api/v1/profile HTTP/1.1" 200 1234
+10.0.0.12 - - [17/Dec/2025:10:01:00 +0000] "GET /search/query?q=other HTTP/1.1" 200 567
