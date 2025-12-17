@@ -53,103 +53,163 @@ Check for OOM in system logs
     dmesg | grep -i "out of memory"
     journalctl -k | grep -i "oom"
 
-
-<!-- 
 Observe free RAM
-free -m  # shows memory in MB
-top      # press M to sort by memory usage
-Immediate Mitigation
-Restart affected service
-sudo systemctl restart <service-name>
-Add temporary swap (use fast local SSD or low-latency cloud SSD volumes such as AWS gp3/Azure Premium; avoid high-latency network disks like classic NFS)
-sudo fallocate -l 2G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-🛑 Creating swap may hide underlying memory leaks. Remove ASAP:
 
-sudo swapoff /swapfile && sudo rm /swapfile
+    free -m  # shows memory in MB
+    top      # press M to sort by memory usage
+
+Immediate Mitigation
+
+Restart affected service
+    
+    sudo systemctl restart <service-name>
+
+Add temporary swap (use fast local SSD or low-latency cloud SSD volumes such as AWS gp3/Azure Premium; avoid high-latency network disks like classic NFS)
+
+    sudo fallocate -l 2G /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+
+🛑 Creating swap may hide underlying memory leaks. Remove ASAP:
+  
+    sudo swapoff /swapfile && sudo rm /swapfile
+
 Increase container or VM memory limits
+
 Kubernetes/Docker: adjust resources.limits.memory.
+
 💡 Beginner Tip: If you see "OOM" in kernel logs, restart the killed process and monitor with top to check if memory climbs again.
 
 Long-Term Fix (🚧 Dev Only)
-Diagnose memory leaks:
-Share memory graphs (Grafana, Prometheus) with developers.
+
+- Diagnose memory leaks:
+- Share memory graphs (Grafana, Prometheus) with developers.
+
 C++: provide core dump (snapshot of program's memory); devs run gdb / Valgrind in staging.
+
 Python: use tracemalloc in tests.
+
 Limit unbounded caches: Developers should set a maximum size or TTL (Time-To-Live) on caches.
+
 Refactor large data structures: Replace or offload growing structures to disk.
+
 Configure proper memory limits in containers: Set both resources.requests.memory and resources.limits.memory appropriately in Kubernetes.
-Issue 02 — Out-Of-Disk Space
-Cheat-line:
-Check disk usage → Delete/archive logs → Vacuum journals → Escalate.
+
+
+### Issue 02 — Out-Of-Disk Space
+
+#### Cheat-line:
+#### Check disk usage → Delete/archive logs → Vacuum journals → Escalate.
 
 What It Is
+
 Filesystem or partition is 100% full, preventing new data writes (logs, swap, temporary files). Services fail to log or crash; new swap cannot be allocated.
 
 Red Flags ⚠️
+
 "No space left on device" errors.
+
 /var/log stops growing or shows truncated files.
+
 Symptoms similar to OOM, but plenty of RAM remains.
-Quick Confirm
+
+#### Quick Confirm
 Check disk usage
-df -h  # disk usage
-df -i  # inode usage
+
+    df -h  # disk usage
+    df -i  # inode usage
+
 Find largest directories (du -x -m works on any recent GNU coreutils; BSD/macOS users can use -k or -h instead)
-du -x -m /* 2>/dev/null | sort -n -k1,1 | tail
+  
+    du -x -m /* 2>/dev/null | sort -n -k1,1 | tail
+
 If /var/log is large:
 
-du -x -m /var/log/* | sort -n -k1,1 | tail
-Immediate Mitigation
+    du -x -m /var/log/* | sort -n -k1,1 | tail
+
+#### Immediate Mitigation
+
 Delete or archive old logs ⚠️
-sudo rm /var/log/myapp/*.old.log
+
+    sudo rm /var/log/myapp/*.old.log
+
 Or archive:
 
-sudo tar czf /backup/logs-$(date +%F).tgz /var/log/myapp/*.1
+    sudo tar czf /backup/logs-$(date +%F).tgz /var/log/myapp/*.1
+  
 Truncate safe-to-clear logs ⚠️
-sudo truncate -s 0 /var/log/huge.log
+
+    sudo truncate -s 0 /var/log/huge.log
+
 Vacuum systemd journals
-sudo journalctl --vacuum-size=200M
+
+    sudo journalctl --vacuum-size=200M
+
 Move logs to larger volume
+
 Attach new disk in cloud, mount (e.g., /mnt/newdisk), move non-critical directories.
-Long-Term Fix (🚧 Ops/Dev)
-Enable log rotation: Ensure /etc/logrotate.d/myapp retains 7 days and compresses older logs.
-Test rotation:
-sudo logrotate --debug /etc/logrotate.d/myapp
-Review app log levels: Set "INFO" or "WARN" in prod, not "DEBUG".
-Adjust partition sizes: Dedicate larger volume for /var/log.
-Automate alerts: Monitor node_filesystem_avail_bytes with Prometheus; alert if <10% free.
-Issue 03 — CPU Saturation (High Load)
-Cheat-line:
-Check CPU load → Pause/kill rogue processes → Scale up instances → Escalate.
+
+#### Long-Term Fix (🚧 Ops/Dev)
+
+- Enable log rotation: Ensure /etc/logrotate.d/myapp retains 7 days and compresses older logs.
+- Test rotation:
+    
+      sudo logrotate --debug /etc/logrotate.d/myapp
+
+- Review app log levels: Set "INFO" or "WARN" in prod, not "DEBUG".
+- Adjust partition sizes: Dedicate larger volume for /var/log.
+- Automate alerts: Monitor node_filesystem_avail_bytes with Prometheus; alert if <10% free.
+
+#### Issue 03 — CPU Saturation (High Load)
+
+#### Cheat-line:
+#### Check CPU load → Pause/kill rogue processes → Scale up instances → Escalate.
 
 What It Is
+
 Server CPU at or near 100%; tasks queue, causing slow responses or timeouts.
 
 Red Flags ⚠️
-top or htop shows processes near 100 % CPU and load average higher than the number of CPU cores while %wa (I/O-wait) remains below ~5 %.
-CPU usage > 80 % sustained.
-Slow responses while memory and disk I/O look normal.
-Quick Confirm
-Check load average
-uptime  # load averages
-If the 1-/5-/15-minute load averages sit well above the number of CPU cores and %wa (I/O-wait) is low (< 5 %), the host is CPU-bound.High load with elevated %wa (≥ 10 %) instead signals disk-I/O saturation.
-Top CPU consumers
-top  # press P to sort by CPU usage
-Or:
 
-ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head
-Immediate Mitigation
+top or htop shows processes near 100 % CPU and load average higher than the number of CPU cores while %wa (I/O-wait) remains below ~5 %.
+
+CPU usage > 80 % sustained.
+
+Slow responses while memory and disk I/O look normal.
+
+#### Quick Confirm
+
+- Check load average
+
+      uptime  # load averages
+
+  If the 1-/5-/15-minute load averages sit well above the number of CPU cores and %wa (I/O-wait) is low (< 5 %), the host is CPU-bound.High load with elevated %wa (≥ 10 %) instead signals disk-I/O saturation.
+
+- Top CPU consumers
+    
+      top  # press P to sort by CPU usage
+
+  Or:
+
+      ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head
+
+#### Immediate Mitigation
+
 Pause or terminate rogue process ⚠️
-sudo kill -SIGTERM <PID>
+
+    sudo kill -SIGTERM <PID>
+
 If unresponsive:
 
-sudo kill -SIGKILL <PID>
+    sudo kill -SIGKILL <PID>
+
 ⚠️ SIGKILL ungraceful; prefer SIGTERM. For containers, use:
 
-sudo docker kill <container-id>
+    sudo docker kill <container-id>
+
 Scale out instances
+
 Behind load balancer or orchestrator:
 orchestrator-cli scale my-app --replicas=4
 Long-Term Fix (🚧 Dev Only)
