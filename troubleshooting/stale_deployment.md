@@ -1,3 +1,12 @@
+### Suppose you are working as a deployment eng and your team works on a service which is called XYZ,
+### which takes pictures of cars and bikes. There is already one service which is deployed onto the server,
+### but one of the developers is trying to upload a new version of this particular service. They've tried 
+### multiple times deploying it but when they try to hit the service, they are not getting the newer response.
+
+This is a classic Production Engineering scenario often called "The Phantom Deployment." It tests your understanding of Linux internals (specifically how the OS handles files and processes) rather than just high-level tools.
+
+Here is a simulation of this interview scenario.
+
 # 🤝 Interview Simulation: The "Stale Deployment"
 
 **Context:** You are the Candidate (Deployment Engineer).

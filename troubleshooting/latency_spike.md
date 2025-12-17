@@ -1,3 +1,9 @@
+### Your metrics indicate that there are sporadic issues that are impacting user experience
+
+This scenario is a classic "intermittent issue" problem. These are harder than "hard down" scenarios because you have to catch the system in the act or find the pattern in the noise.
+
+The following is a simulated interview guide for the "Synchronized Cron Job" scenario, a favorite at Meta to test if you can correlate time-series data with system resources.
+
 # 🤝 Interview Simulation: The "Periodic Latency Spike"
 
 **Context:** You are the Candidate (PE). The Interviewer is the system.

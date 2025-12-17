@@ -1,3 +1,9 @@
+### A service you support is no longer responding to requests
+
+This is a very common scenario in Meta Production Engineering interviews because it tests if you can distinguish between a network issue, a resource issue, and an application logic issue.
+
+Here is a simulation of the "Hanging Service" scenario.
+
 # 🤝 Interview Simulation: The "Silent Service"
 
 **Context:** You are the Candidate (PE). The Interviewer is the system.

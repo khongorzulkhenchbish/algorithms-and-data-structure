@@ -1,3 +1,11 @@
+### An application terminates unexpectedly after a period of time for unknown reasons
+
+This is the classic **"OOM (Out of Memory) Killer"** scenario. It is a staple of Production Engineering interviews because it tests whether you look for errors *inside* the application logs or *outside* in the kernel logs.
+
+Here is the simulation guide for the **"The Vanishing Process"** scenario.
+
+---
+
 # 🤝 Interview Simulation: The "Vanishing Process"
 
 **Context:** You are the Candidate (PE).
