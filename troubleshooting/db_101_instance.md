@@ -29,6 +29,7 @@
 
 ```bash
 tail -f /var/log/inventory-svc/error.log
+# returns the last 10 lines of the log
 ```
 
 **Interviewer:** "You see a repeating error every time a request comes in: `Error: Connection to database failed. Fatal: sorry, too many clients already`."

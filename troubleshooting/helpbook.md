@@ -248,39 +248,57 @@ Enforce lock ordering: Always acquire locks in a consistent order.
 Minimize lock scope: Use smaller critical sections or finer-grained locks.
 Use try-lock with timeout: Replace standard locks with timeout-based locks (e.g., std::timed_mutex).
 Tune resource pools: Set reasonable maximum pool sizes and connection timeouts.
-Issue 05 — Database Latency / Performance Degradation
-Cheat-line:
-Check slow queries → Kill slow queries → Scale up DB → Escalate.
 
-What It Is
+## Issue 05 — Database Latency / Performance Degradation
+### Cheat-line:
+#### Check slow queries → Kill slow queries → Scale up DB → Escalate.
+
+### What It Is
 Slow database responses causing downstream timeouts or latency due to missing indexes, lock contention, or resource saturation.
 
-Red Flags ⚠️
-P95/P99 query latency spikes.
-Logs show "SQL query timed out" or similar errors.
-Connection count at maximum.
-Quick Confirm
-Check slow-query log (MySQL)
-sudo tail -n 50 /var/log/mysql/mysql-slow.log
-Inspect active connections
-mysql -e "SHOW STATUS LIKE 'Threads_connected';"
-Observe resource usage
-top
-vmstat 1 5
-High %iowait suggests disk saturation.
-Immediate Mitigation
-Kill long-running queries ⚠️
-mysql -e "SHOW PROCESSLIST;"
-mysql -e "KILL <Id>;"           # or: KILL CONNECTION <Id>
-Temporarily scale up or add read replicas
-Direct read traffic to replicas if available; increase resources on primary.
-Use rolling restart or read-only mode (last resort) 🛑
+### Red Flags ⚠️
+- P95/P99 query latency spikes.
+- Logs show "SQL query timed out" or similar errors.
+- Connection count at maximum.
+
+### Quick Confirm
+
+1. Check slow-query log (MySQL)
+
+        sudo tail -n 50 /var/log/mysql/mysql-slow.log
+
+2. Inspect active connections
+
+        mysql -e "SHOW STATUS LIKE 'Threads_connected';"
+3. Observe resource usage
+
+        top
+        vmstat 1 5
+
+- High %iowait suggests disk saturation.
+
+### Immediate Mitigation
+
+1. Kill long-running queries ⚠️
+
+        mysql -e "SHOW PROCESSLIST;"
+        mysql -e "KILL <Id>;"
+        # or: KILL CONNECTION <Id>
+
+2. Temporarily scale up or add read replicas
+
+- Direct read traffic to replicas if available; increase resources on primary.
+
+3. Use rolling restart or read-only mode (last resort) 🛑
 Avoid full systemctl restart mysqld; use rolling restarts or read-only mode.
-Long-Term Fix (🚧 Dev/DBA)
-Optimize indexes: Use EXPLAIN to analyze slow queries and add missing indexes.
-Review transactions: Break large updates/deletes into batches.
-Tune connection pools: Adjust max_connections cautiously.
-Scale resources: Plan scaling if CPU or I/O is consistently high.
+
+### Long-Term Fix (🚧 Dev/DBA)
+
+- **Optimize indexes**: Use EXPLAIN to analyze slow queries and add missing indexes.
+- **Review transactions**: Break large updates/deletes into batches.
+- **Tune connection pools**: Adjust max_connections cautiously.
+- **Scale resources**: Plan scaling if CPU or I/O is consistently high.
+
 Issue 06 — Service Timeouts (Inter-service Calls)
 Cheat-line:
 Check timeout logs → Increase timeout → Implement fallback → Escalate.

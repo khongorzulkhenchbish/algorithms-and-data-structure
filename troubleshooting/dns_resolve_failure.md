@@ -24,7 +24,8 @@ First: Are the users seeing a specific error? (e.g., 'Connection Refused', 'DNS 
 
 ```bash
 dig messenger-web.meta.com
-
+# Domain Information Groper. It retrieves information about DNS name servers.
+# status tells either NOERROR or errors such as NXDOMAIN
 ```
 
 ## Phase 2: Identifying the Layer
