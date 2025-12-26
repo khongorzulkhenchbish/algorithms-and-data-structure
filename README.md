@@ -117,6 +117,6 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |1002. find common characters|Array, Hashmap|Easy(not really)|Use 2 hashmap, one for collecting each words character frequency, another for updating after by comparing with the current word frequency. Space will not be more than 26 or O(1)|
 
 ## BLIND 150
-| Problem Name | Solution |
-|---------|---------|
-| a       | b       |
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
+|167. Two Sum II - Input Array Is Sorted|Array, Two Pointers|Medium|Use two pointers, if the sum is higher than target decrease the right pointer, else increase the left pointer, until the sum is found|
