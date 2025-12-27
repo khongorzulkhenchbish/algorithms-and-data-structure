@@ -120,3 +120,4 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |167. Two Sum II - Input Array Is Sorted|Array, Two Pointers|Medium|Use two pointers, if the sum is higher than target decrease the right pointer, else increase the left pointer, until the sum is found|
+|42. Trapping Rain Water|Array, Two Pointers|Hard|For each cell, find it's max column to the left and right. After that, [current_water = min(left, right)-curr_height]|
