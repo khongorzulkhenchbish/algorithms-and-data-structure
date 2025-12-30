@@ -125,3 +125,4 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |567. Permutation in String|Hash Table, Sliding Window|Medium|First form same length frequency list. Then iterate rest of the second string. At each step add the current while removing the leftmost of the sliding window from the frequency list. Use ASCII values for list indexes|
 |239. Sliding Window Maximum|Array, Monotonic Queue, Sliding Window|Hard|TODO: Didn't understand well|
 |150. Evaluate Reverse Polish Notation|Array, Stack|Medium|Using stack will make it easier because, we don't know what to do with numbers until we get the operators.|
+|739. Daily Temperatures|Array, Monotonic Stack|Medium|If the value is decreasing, add it to the stack. If it is increasing, pop from the stack. The stack should be index stack. The difference can be calculated by (i_curr_max - i_stack_last_elem)|
