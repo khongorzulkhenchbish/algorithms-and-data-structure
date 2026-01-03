@@ -32,20 +32,60 @@ So the **maximum** number of stack frames at the same time equals: O(H). Let's s
 
 Height of the tree: **3** if by edges.
 #### 🧠 What happens to the call stack during DFS?
-                            # Steps and call stacks at that step
-    dfs(A):                 # 1. Call stack: [A]
-        dfs(B):             # 2. Call stack: [A], [B]
-            dfs(D)          # 3. Call stack: [A], [B], [D] => equal to Height 3
-            dfs(E):         # 4. Call stack: [A], [B], [E] because we returned from [D]
-                dfs(F)      # 5. Call stack: [A], [B], [E], [F] => depth 4, the longest root→leaf path plus 1
-        dfs(C)              # 6. Call stack: [A], [B] it shrank back to 2 because we dropped [B, E, F]
-        ...
-
+```python
+# Steps and call stacks at that step
+dfs(A):                 # 1. Call stack: [A]
+    dfs(B):             # 2. Call stack: [A], [B]
+        dfs(D)          # 3. Call stack: [A], [B], [D] => equal to Height 3
+        dfs(E):         # 4. Call stack: [A], [B], [E] because we returned from [D]
+            dfs(F)      # 5. Call stack: [A], [B], [E], [F] => depth 4, the longest root→leaf path plus 1
+    dfs(C)              # 6. Call stack: [A], [B] it shrank back to 2 because we dropped [B, E, F]
+    ...
+```
 
 Number of nodes = **4**\
 Height (in edges) = **3**
 
 So recursion used **O(height)** space. P.S: We know that either of them can be the space complexity. Just for overall view stating O(height) is better.
+
+### Monotonic Stack
+We can have either increasing or decreasing monotonic stack. To identify this type of problem, you should look for "find the next greater/lesser element" in the description.
+
+**Increasing Monotonic Stack** - Find next smaller element - store those that haven't found the next smaller
+
+```python
+def nextSmallerElement(nums):
+    n = len(nums)
+    result = [-1] * n
+    stack = []
+    for i in range(n):
+        while stack and nums[i] < nums[stack[-1]]:
+            index = stack.pop()
+            result[index] = nums[i]
+        stack.append(i)
+    return result
+# nums =   [2,1,3,2,4, 0]
+# stack =  [5]
+# result = [1 0 2 0 0 -1]
+```
+
+**Decreasing Monotonic Stack** - Find next greater element - store those that haven't found the next greater
+```python
+def nextGreaterElement(nums):
+  n = len(nums)
+  result = [-1] * n
+  stack = []
+  for i in range(n):
+    while stack and nums[i] > nums[stack[-1]]:
+      index = stack.pop()
+      result[index] = nums[i]
+    stack.append(i)
+  return result
+# nums =   [2,1,3,2,4, 0]
+# stack =  [4, 0]
+# result = [3 3 4 4 -1 -1]
+```
+
 
 ## BLIND 75
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
@@ -125,4 +165,4 @@ So recursion used **O(height)** space. P.S: We know that either of them can be t
 |567. Permutation in String|Hash Table, Sliding Window|Medium|First form same length frequency list. Then iterate rest of the second string. At each step add the current while removing the leftmost of the sliding window from the frequency list. Use ASCII values for list indexes|
 |239. Sliding Window Maximum|Array, Monotonic Queue, Sliding Window|Hard|TODO: Didn't understand well|
 |150. Evaluate Reverse Polish Notation|Array, Stack|Medium|Using stack will make it easier because, we don't know what to do with numbers until we get the operators.|
-|739. Daily Temperatures|Array, Monotonic Stack|Medium|If the value is decreasing, add it to the stack. If it is increasing, pop from the stack. The stack should be index stack. The difference can be calculated by (i_curr_max - i_stack_last_elem)|
+|739. Daily Temperatures|Array, Monotonic Stack|Medium|Use monotonic decreasing stack to store colder (day, temp). If you find warmer day, update the time it took to wait "for every pairs in stack that is colder than current". If you encounter colder days, then just store it alongside temp so you can later mark the time difference when you find warmer day for them.|
