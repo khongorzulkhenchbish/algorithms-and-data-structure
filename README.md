@@ -156,6 +156,7 @@ def nextGreaterElement(nums):
 |125. valid palindrome|String, Two pointers|Easy|check the even and odd scenarios first, then filter out the non numberic and alphabetic chars, then use two pointers to start comparing from start and end, stop when start>end|
 |419. battleships in a board|Array, Matrix|Medium|In each row, col there can be more than 1 ships, at each step look back upwards and to the left and count the ship if it is the first one. Edge case: board[0][0]|
 |1002. find common characters|Array, Hashmap|Easy(not really)|Use 2 hashmap, one for collecting each words character frequency, another for updating after by comparing with the current word frequency. Space will not be more than 26 or O(1)|
+|5. Longest Palindromic Substring|Two Pointers, String|Medium|Assume every character sis possibly the middle character of palindrome, expand to both directions as much as you can. Notice that longest palindrome has either even or odd length.|
 
 ## BLIND 150
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
