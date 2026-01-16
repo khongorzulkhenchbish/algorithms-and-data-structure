@@ -108,7 +108,7 @@ def nextGreaterElement(nums):
 |190. Reverse Bits|Bit Manipulation|Easy|at every step in the iteration, take the right most from n then add this to the reverse, while shifting reverse to the left at every step|
 |268. Missing Number|Array, Bit manipulation|Easy|diff between sum-without-missing-one and sum-with-missing-one should print missing one|
 
-## TOP 50
+## META TOP 50
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |215. kth largest element in the array|Heap|Medium|Use min-heap to store always at max k elements in space, the root of min-heap is the kth largest in the end. Use heapq.heappop(), heapq.heappush(), both time: O(logK)|
@@ -142,6 +142,10 @@ def nextGreaterElement(nums):
 |173. Binary Search Tree Iterator|Stack, Tree, Design|Medium|Use stack to store the left most nodes. Pop 1-by-1, then before returning, add the right childs left most items in the stack.|
 |703. Kth Largest Element in a Stream|Heap, Design|Easy|Initialize the min_heap with k elements using the add fuction. heapq.pop and heap.push both takes time: O(logN)|
 
+## Google common appearing questions
+|Problem Name|DS & Algorithm|Difficulty|1-line solution|
+|---------|---------|---------|---------|
+|128. Longest Consecutive Sequence|Array, Hashtable|Medium|The intuition is to understand that the list consists of subsets. We can determine "if the current number is the start of the subset" by checking if it's previous number exists or not. If it is we can count by checking if the next numbers are in the original list/set.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
