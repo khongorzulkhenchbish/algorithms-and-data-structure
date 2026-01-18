@@ -146,6 +146,7 @@ def nextGreaterElement(nums):
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |128. Longest Consecutive Sequence|Array, Hashtable|Medium|The intuition is to understand that the list consists of subsets. We can determine "if the current number is the start of the subset" by checking if it's previous number exists or not. If it is we can count by checking if the next numbers are in the original list/set.|
+|539. Minimum Time Difference|Array, Math, String, Sorting|Medium|Imagine the give timepoints as circular clock. Instead of sorting the strings, store the minutes into bucket sort array where it has 24*60 at most elements. The edge case should be calculated as the distance between right side and left side of 00:00|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
