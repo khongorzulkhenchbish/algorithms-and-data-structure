@@ -151,6 +151,7 @@ def nextGreaterElement(nums):
 |39. Decode String|String, Stack, Recursion|Medium|We could store everything in the stack as long as we don't see "]". Once we encounter "]", we should solve the subproblems in backwards direction and append that result to the stack.|
 |26. Remove Duplicates from Sorted Array|Array, Two Pointers|Easy|We update the left index value only if we find another value in the rest of the array.|
 |14. Longest Common Prefix|Array, String|Easy-Medium|Traverse all of the index at the same time. This way we can compare all at 1 iteration. The the outer loop can handle the incrementing of common subs.|
+|136. Single Number|Array, Bit manipulation|Easy|Use XOR, it will cancel out those appear even times, and leave out the odd one which is answer.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
