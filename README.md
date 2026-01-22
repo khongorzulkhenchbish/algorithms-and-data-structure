@@ -152,6 +152,7 @@ def nextGreaterElement(nums):
 |26. Remove Duplicates from Sorted Array|Array, Two Pointers|Easy|We update the left index value only if we find another value in the rest of the array.|
 |14. Longest Common Prefix|Array, String|Easy-Medium|Traverse all of the index at the same time. This way we can compare all at 1 iteration. The the outer loop can handle the incrementing of common subs.|
 |136. Single Number|Array, Bit manipulation|Easy|Use XOR, it will cancel out those appear even times, and leave out the odd one which is answer.|
+|169. Majority Element|Array, Counting|Easy|Use counter. If we meet a different element, we should decrease the counter until it becomes 0. If it is zero we pivot the majority to this new element as they could be the majority.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
