@@ -149,6 +149,7 @@ def nextGreaterElement(nums):
 |539. Minimum Time Difference|Array, Math, String, Sorting|Medium|Imagine the give timepoints as circular clock. Instead of sorting the strings, store the minutes into bucket sort array where it has 24*60 at most elements. The edge case should be calculated as the distance between right side and left side of 00:00|
 |636. Exclusive Time of Functions|Array, Stack|Medium|If the function starts, the diff=(current timestamp-prev) while if the functions ends, diff=(current timestamp-prev+1). The time spent between [6,6] is one.|
 |39. Decode String|String, Stack, Recursion|Medium|We could store everything in the stack as long as we don't see "]". Once we encounter "]", we should solve the subproblems in backwards direction and append that result to the stack.|
+|26. Remove Duplicates from Sorted Array|Array, Two Pointers|Easy|We update the left index value only if we find another value in the rest of the array.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
