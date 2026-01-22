@@ -150,6 +150,7 @@ def nextGreaterElement(nums):
 |636. Exclusive Time of Functions|Array, Stack|Medium|If the function starts, the diff=(current timestamp-prev) while if the functions ends, diff=(current timestamp-prev+1). The time spent between [6,6] is one.|
 |39. Decode String|String, Stack, Recursion|Medium|We could store everything in the stack as long as we don't see "]". Once we encounter "]", we should solve the subproblems in backwards direction and append that result to the stack.|
 |26. Remove Duplicates from Sorted Array|Array, Two Pointers|Easy|We update the left index value only if we find another value in the rest of the array.|
+|14. Longest Common Prefix|Array, String|Easy-Medium|Traverse all of the index at the same time. This way we can compare all at 1 iteration. The the outer loop can handle the incrementing of common subs.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
