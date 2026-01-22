@@ -153,6 +153,7 @@ def nextGreaterElement(nums):
 |14. Longest Common Prefix|Array, String|Easy-Medium|Traverse all of the index at the same time. This way we can compare all at 1 iteration. The the outer loop can handle the incrementing of common subs.|
 |136. Single Number|Array, Bit manipulation|Easy|Use XOR, it will cancel out those appear even times, and leave out the odd one which is answer.|
 |169. Majority Element|Array, Counting|Easy|Use counter. If we meet a different element, we should decrease the counter until it becomes 0. If it is zero we pivot the majority to this new element as they could be the majority.|
+|66. Plus One|Array, Math|Easy|Iterate backwards, if we find a digit less than 9, we add 1 and return the array immediately. Else go until the left most while setting digits to 0, then return 1 + digits array and the end.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
