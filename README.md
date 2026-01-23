@@ -154,6 +154,7 @@ def nextGreaterElement(nums):
 |136. Single Number|Array, Bit manipulation|Easy|Use XOR, it will cancel out those appear even times, and leave out the odd one which is answer.|
 |169. Majority Element|Array, Counting|Easy|Use counter. If we meet a different element, we should decrease the counter until it becomes 0. If it is zero we pivot the majority to this new element as they could be the majority.|
 |66. Plus One|Array, Math|Easy|Iterate backwards, if we find a digit less than 9, we add 1 and return the array immediately. Else go until the left most while setting digits to 0, then return 1 + digits array and the end.|
+|13. Roman Integer|Hash Table, Map, String|Easy|The intuition here is when the i th roman number is less than the i+1 th roman number then we decrease the answer by that, else we increase the ans by that.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
