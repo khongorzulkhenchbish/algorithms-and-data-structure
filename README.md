@@ -150,6 +150,7 @@ def nextGreaterElement(nums):
 |539. Minimum Time Difference|Array, Math, String, Sorting|Medium|Imagine the give timepoints as circular clock. Instead of sorting the strings, store the minutes into bucket sort array where it has 24*60 at most elements. The edge case should be calculated as the distance between right side and left side of 00:00|
 |636. Exclusive Time of Functions|Array, Stack|Medium|If the function starts, the diff=(current timestamp-prev) while if the functions ends, diff=(current timestamp-prev+1). The time spent between [6,6] is one.|
 |39. Decode String|String, Stack, Recursion|Medium|We could store everything in the stack as long as we don't see "]". Once we encounter "]", we should solve the subproblems in backwards direction and append that result to the stack.|
+|69. sqrt(x)|Math, Binary Search|Easy|Assume the sqrt is in between 0,x. Use binary search to divide and corner the sqrt value. Consider edge case when x=8, mid value=2 and 2^2<8<(2+1)^2|
 |26. Remove Duplicates from Sorted Array|Array, Two Pointers|Easy|We update the left index value only if we find another value in the rest of the array.|
 |14. Longest Common Prefix|Array, String|Easy-Medium|Traverse all of the index at the same time. This way we can compare all at 1 iteration. The the outer loop can handle the incrementing of common subs.|
 |136. Single Number|Array, Bit manipulation|Easy|Use XOR, it will cancel out those appear even times, and leave out the odd one which is answer.|
