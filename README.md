@@ -151,6 +151,7 @@ def nextGreaterElement(nums):
 |636. Exclusive Time of Functions|Array, Stack|Medium|If the function starts, the diff=(current timestamp-prev) while if the functions ends, diff=(current timestamp-prev+1). The time spent between [6,6] is one.|
 |39. Decode String|String, Stack, Recursion|Medium|We could store everything in the stack as long as we don't see "]". Once we encounter "]", we should solve the subproblems in backwards direction and append that result to the stack.|
 |69. sqrt(x)|Math, Binary Search|Easy|Assume the sqrt is in between 0,x. Use binary search to divide and corner the sqrt value. Consider edge case when x=8, mid value=2 and 2^2<8<(2+1)^2|
+|72. Edit distance|String, Dynamic Programming|Medium->Hard|Use bottom up table. If the chars are equal, we go forward, if not we should insert|delete|replace. TODO: Need to revise!|
 |26. Remove Duplicates from Sorted Array|Array, Two Pointers|Easy|We update the left index value only if we find another value in the rest of the array.|
 |14. Longest Common Prefix|Array, String|Easy-Medium|Traverse all of the index at the same time. This way we can compare all at 1 iteration. The the outer loop can handle the incrementing of common subs.|
 |136. Single Number|Array, Bit manipulation|Easy|Use XOR, it will cancel out those appear even times, and leave out the odd one which is answer.|
