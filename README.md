@@ -160,6 +160,7 @@ def nextGreaterElement(nums):
 |13. Roman Integer|Hash Table, Map, String|Easy|The intuition here is when the i th roman number is less than the i+1 th roman number then we decrease the answer by that, else we increase the ans by that.|
 |1200. Minimum absolute difference|Array, Sorting|Easy|Sorting will place closest numbers next to each other. Rest is straightforward.|
 |1339. Maximum Product of Splitted Binary Tree|DFS, Binary Tree|Medium|The idea is to understand that tree can be split into leaf node, or subtree (with parent). Store possible subtree and leaf node sums. Then calculate the max by (total - sum)*sum|
+|3453. Separate Squares I|Math, Array, Binary Search|Medium|Notice that area will increase as y increases. We should narrow down y in binary search.|
 
 ## Design
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
