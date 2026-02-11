@@ -145,6 +145,7 @@ def nextGreaterElement(nums):
 ## Google common appearing questions
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
+|22. Generate parentheses|String, Backtrack|Medium|At every step, we choose either one of '(' and ')'. But we prioritize the open brackets, then the close brackets.|
 |128. Longest Consecutive Sequence|Array, Hashtable|Medium|The intuition is to understand that the list consists of subsets. We can determine "if the current number is the start of the subset" by checking if it's previous number exists or not. If it is we can count by checking if the next numbers are in the original list/set.|
 |198. House robber|Array, Dynamic Programming|Medium|The intuition is to understand at every house, we either rob or skip, but when we skip, we should keep the prev collected amount. Then overall formula currMax = max(prev2+cur, prev1) where [prev2, prev1, cur, curNext, ..]|
 |539. Minimum Time Difference|Array, Math, String, Sorting|Medium|Imagine the give timepoints as circular clock. Instead of sorting the strings, store the minutes into bucket sort array where it has 24*60 at most elements. The edge case should be calculated as the distance between right side and left side of 00:00|
