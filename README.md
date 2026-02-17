@@ -163,6 +163,7 @@ def nextGreaterElement(nums):
 |792. Number of matching subsequences|String, Hash Table, Double Ended Queue|Medium|Instead of checking the given string for every word, iterate the words at once. Letter by letter all at the same time. The subwords can be passed as hashmap, deque structure.|
 |1200. Minimum absolute difference|Array, Sorting|Easy|Sorting will place closest numbers next to each other. Rest is straightforward.|
 |1339. Maximum Product of Splitted Binary Tree|DFS, Binary Tree|Medium|The idea is to understand that tree can be split into leaf node, or subtree (with parent). Store possible subtree and leaf node sums. Then calculate the max by (total - sum)*sum|
+|2101. Detonate the maximum bombs|Array, Math, Geometry, DFS, Graph|Medium|To find if there is intersection, calculate the pythagoras distance between the center coordinates. If this center_dist <= r1, it means circle2's center is inside the circle1, vice versa for other way around. Rest needs to be studied.|
 |3453. Separate Squares I|Math, Array, Binary Search|Medium|Notice that area will increase as y increases. We should narrow down y in binary search.|
 
 ## Design
