@@ -142,7 +142,7 @@ def nextGreaterElement(nums):
 |173. Binary Search Tree Iterator|Stack, Tree, Design|Medium|Use stack to store the left most nodes. Pop 1-by-1, then before returning, add the right childs left most items in the stack.|
 |703. Kth Largest Element in a Stream|Heap, Design|Easy|Initialize the min_heap with k elements using the add fuction. heapq.pop and heap.push both takes time: O(logN)|
 
-## Google common appearing questions
+## Google
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |22. Generate parentheses|String, Backtrack|Medium|At every step, we choose either one of '(' and ')'. But we prioritize the open brackets, then the close brackets.|
@@ -161,6 +161,7 @@ def nextGreaterElement(nums):
 |13. Roman Integer|Hash Table, Map, String|Easy|The intuition here is when the i th roman number is less than the i+1 th roman number then we decrease the answer by that, else we increase the ans by that.|
 |528. Random Pick with Weight|Array, Math, Binary Search, Prefix Sum, Randomized, Design|Medium|The prefix sum can represent the weight instead of we creating lengthy frequency list. Then when picking, get random number between [0, total_sum], use binary search to find the index from the prefix_sum array where the target (equally chosen) number is between and makes the left and right pointers meet|
 |792. Number of matching subsequences|String, Hash Table, Double Ended Queue|Medium|Instead of checking the given string for every word, iterate the words at once. Letter by letter all at the same time. The subwords can be passed as hashmap, deque structure.|
+|962. Maximum Width Ramp|Array, Monotonic Stack|Medium|Only those indexes is globally decreasing can be start of new subarray. Calculate the length backwards to minimize the expense and maximize the width. Once length is calculated, pop the starting index already.|
 |1200. Minimum absolute difference|Array, Sorting|Easy|Sorting will place closest numbers next to each other. Rest is straightforward.|
 |1339. Maximum Product of Splitted Binary Tree|DFS, Binary Tree|Medium|The idea is to understand that tree can be split into leaf node, or subtree (with parent). Store possible subtree and leaf node sums. Then calculate the max by (total - sum)*sum|
 |2101. Detonate the maximum bombs|Array, Math, Geometry, DFS, Graph|Medium|To find if there is intersection, calculate the pythagoras distance between the center coordinates. If this center_dist <= r1, it means circle2's center is inside the circle1, vice versa for other way around. Rest needs to be studied.|
