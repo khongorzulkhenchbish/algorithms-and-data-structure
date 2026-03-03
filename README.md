@@ -87,7 +87,7 @@ def nextGreaterElement(nums):
 ```
 
 
-## BLIND 75
+## BLIND 150
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |21. Merge Two Sorted Lists|Linked List|Easy|Imagine: changing the arrow directions, iterate both lists, move the pointers to the next if the element is merged|
@@ -107,6 +107,7 @@ def nextGreaterElement(nums):
 |338. Counting bits|Bit Manipulation, Dynamic Programming|Easy|Find out the pattern to re-use the previous counted ones in the bit representation|
 |190. Reverse Bits|Bit Manipulation|Easy|at every step in the iteration, take the right most from n then add this to the reverse, while shifting reverse to the left at every step|
 |268. Missing Number|Array, Bit manipulation|Easy|diff between sum-without-missing-one and sum-with-missing-one should print missing one|
+|994. Rotting Oranges|Multi-source BFS, Matrix|Medium|first collect the rotten oranges in queue, then iterate level by level. This will rot neighbors at the same time for all rotten oranges|
 
 ## META TOP 50
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
