@@ -169,6 +169,7 @@ def nextGreaterElement(nums):
 |1544. Make The String Great|String, Stack|Easy|Use stack to cancel out the last appeared adjacent chars, the difference of Capital and Lowercase ASCII code letter is always 32 when they are the same char like 'a' and 'A'.|
 |2101. Detonate the maximum bombs|Array, Math, Geometry, DFS, Graph|Medium|To find if there is intersection, calculate the pythagoras distance between the center coordinates. If this center_dist <= r1, it means circle2's center is inside the circle1, vice versa for other way around. Rest needs to be studied.|
 |2096. Step-By-Step Directions From a Binary Tree Node to Another|String, DFS, Backtrack, Tree|Medium|First find the LCA among the parent nodes list. The from there the rest of respective array elems are the paths. For the path until the start, reverse everything as "U", then add the path to dest without modifying.|
+|2812. 2812. Find the Safest Path in a Grid|Matrix, Multi-source BFS, Dijkstra, Priority Queue, Heap|Medium-Hard|994. Rotting Oranges + 778. Swim in a Rising Water|
 |3453. Separate Squares I|Math, Array, Binary Search|Medium|Notice that area will increase as y increases. We should narrow down y in binary search.|
 
 ## Design
