@@ -48,6 +48,39 @@ Height (in edges) = **3**
 
 So recursion used **O(height)** space. P.S: We know that either of them can be the space complexity. Just for overall view stating O(height) is better.
 
+### Trie
+The **trie** data structure is highly effective for storing a set of keys represented as strings in a large dataset.
+Each node contains a character value, links to its children, and a boolean flag indicating whether it marks the end of a word.
+The structure is similar to a hash map: insertions and lookups take **O(N)** time, where _N_ is the length of the string.
+Tries are commonly used for autocomplete (prefix matching) and spell checking. Their main drawback is increased memory usage,
+since every character in every key requires a separate node with child pointers.
+
+#### Representation of a Trie node
+- A trie consists of nodes connected by edges.
+- Each node represents a character (or part of a string).
+- The root node is the starting point and does not correspond to any character.
+
+```python
+class TrieNode:
+    def __init__(self):
+        self.children = [None] * 26
+        self.isEndOfWord = False
+
+def insert(self, key):
+        # Inserts a key into trie if it does not exist already.
+        # And if the key is a prefix of the trie node, just
+        # marks it as leaf node.
+        node = self.root
+
+        for a in key:
+            if not node.children.get(a):
+                node.children[a] = TrieNode()
+
+            node = node.children[a]
+
+        node.last = True
+```
+
 ### Monotonic Stack
 We can have either increasing or decreasing monotonic stack. To identify this type of problem, you should look for "find the next greater/lesser element" in the description.
 
@@ -149,6 +182,7 @@ def nextGreaterElement(nums):
 |22. Generate parentheses|String, Backtrack|Medium|At every step, we choose either one of '(' and ')'. But we prioritize the open brackets, then the close brackets.|
 |128. Longest Consecutive Sequence|Array, Hashtable|Medium|The intuition is to understand that the list consists of subsets. We can determine "if the current number is the start of the subset" by checking if it's previous number exists or not. If it is we can count by checking if the next numbers are in the original list/set.|
 |198. House robber|Array, Dynamic Programming|Medium|The intuition is to understand at every house, we either rob or skip, but when we skip, we should keep the prev collected amount. Then overall formula currMax = max(prev2+cur, prev1) where [prev2, prev1, cur, curNext, ..]|
+|212. Word Search II|String, Backtracking, Trie, Matrix|Hard|First convert the given set of words into one Trie. Then search from the matrix board one by one if the character exists in the first level of the trie. If so we can start dfs call within backtracking algorithm...|
 |539. Minimum Time Difference|Array, Math, String, Sorting|Medium|Imagine the give timepoints as circular clock. Instead of sorting the strings, store the minutes into bucket sort array where it has 24*60 at most elements. The edge case should be calculated as the distance between right side and left side of 00:00|
 |636. Exclusive Time of Functions|Array, Stack|Medium|If the function starts, the diff=(current timestamp-prev) while if the functions ends, diff=(current timestamp-prev+1). The time spent between [6,6] is one.|
 |39. Decode String|String, Stack, Recursion|Medium|We could store everything in the stack as long as we don't see "]". Once we encounter "]", we should solve the subproblems in backwards direction and append that result to the stack.|
