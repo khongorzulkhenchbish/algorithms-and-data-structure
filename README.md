@@ -31,6 +31,16 @@ So the **maximum** number of stack frames at the same time equals: O(H). Let's s
           F
 
 Height of the tree: **3** if by edges.
+
+#### The "Golden Rule" of Identification
+|||
+|---------|---------|
+|Use **BFS** when...|Use **DFS** when...|
+|You need the **Shortest Path** (minimum steps).|You need to know if a **Path Exists** at all.|
+|The graph is unweighted (or all weights are 1).|You need to explore **All Possible Paths**.|
+|You want to find the closest target first.|You are doing **Backtracking** (like Word Search).|
+|You want to move in "ripples" or "waves."|You need to go deep (e.g., **Topological Sort**).|
+
 #### 🧠 What happens to the call stack during DFS?
 ```python
 # Steps and call stacks at that step
