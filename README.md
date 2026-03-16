@@ -236,6 +236,7 @@ def nextGreaterElement(nums):
 |875. Koko Eating Bananas|Array, Binary Search|Medium|Notice that values k=[1, max(piles)]. So instead of looping over the array k times, we can do logK time by checking if the current_total_hours is less or more than the hour limit given. If we are eating slow, we should increase the speed k. Else, if we are eating fast and make it in time h, we can still try to minimize K.|
 |5. Longest Palindromic Substring|Two Pointers, String|Medium|Assume every character sis possibly the middle character of palindrome, expand to both directions as much as you can. Notice that longest palindrome has either even or odd length.|
 |34. Find First and Last Position of Element in Sorted Array|Array, Binary Search|Medium|If mid_val < target, target is on the right side, if mid_val > target, target is on the left side. If mid_val is equal to target then the first and last positions are in both left and right side. Therefore use a trick to call subfunction itself twice, passing a boolean value to intentionally go left and right each time.|
+|3868. Minimum Cost to Equalize Arrays Using Swaps|Array, Hash Map|Medium(Easy)|Inside the same array, positions don't matter, only frequencies matter|
 
 ## BLIND 150
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
