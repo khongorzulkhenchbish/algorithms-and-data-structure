@@ -242,6 +242,7 @@ def nextGreaterElement(nums):
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |110. Balanced Binary Tree|Binary Tree, DFS|Easy (Medium)|To do it in one traversal, use -1 as extra value to mark unbalanced node. Otherwise, always return the height as max(left, right) subtrees|
+|1148. Count Good Nodes in Binary Tree|Binary Tree, DFS, BFS|Medium (Easy)|Keep track of the current paths maximum as go down the top-bottom direction|
 |167. Two Sum II - Input Array Is Sorted|Array, Two Pointers|Medium|Use two pointers, if the sum is higher than target decrease the right pointer, else increase the left pointer, until the sum is found|
 |42. Trapping Rain Water|Array, Two Pointers|Hard|For each cell, find it's max column to the left and right. After that, [current_water = min(left, right)-curr_height]|
 |567. Permutation in String|Hash Table, Sliding Window|Medium|First form same length frequency list. Then iterate rest of the second string. At each step add the current while removing the leftmost of the sliding window from the frequency list. Use ASCII values for list indexes|
