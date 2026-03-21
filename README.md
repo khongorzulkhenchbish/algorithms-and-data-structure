@@ -237,6 +237,7 @@ def nextGreaterElement(nums):
 |5. Longest Palindromic Substring|Two Pointers, String|Medium|Assume every character sis possibly the middle character of palindrome, expand to both directions as much as you can. Notice that longest palindrome has either even or odd length.|
 |34. Find First and Last Position of Element in Sorted Array|Array, Binary Search|Medium|If mid_val < target, target is on the right side, if mid_val > target, target is on the left side. If mid_val is equal to target then the first and last positions are in both left and right side. Therefore use a trick to call subfunction itself twice, passing a boolean value to intentionally go left and right each time.|
 |227. Basic Calculator II|Math, String, Stack|Medium(Hard but easy after intuition)|Perform the prev operation only when we see current operation, for +- we could just store the nums as +-nums in the stack. But for */ we have to do the operation immediately. Return the sum(stack) elements. Optimal approach is similar but instead of stack, we use last_term variable.|
+|772. Basic Calculator III|Math, String, Stack, Recursion|Hard|Almost same as basic calculator 2, instead when we encounter (, we start a recursion and break once we find ).|
 |3868. Minimum Cost to Equalize Arrays Using Swaps|Array, Hash Map|Medium(Easy)|Inside the same array, positions don't matter, only frequencies matter|
 |733. Flood Fill|Matrix, BFS, BFS|Easy|Straighforward DFS, in the BFS, there is no need for level order traversal like finding the shortest path|
 
