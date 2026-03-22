@@ -137,6 +137,8 @@ def nextGreaterElement(nums):
 |141. Linked List Cycle|Linked List, Floyd's Tortoise and Hare|Easy|Slow and Fast pointer to move ahead, check if on the same node each time|
 |141. Linked List Cycle|Linked List, HashMap|Easy|Iterate, store the node if not seen, return true if node was seen|
 |143. Reorder List|Linked List manipulation|Medium|Find middle point, revert the second part, later iterate both parallelly|
+|207. Course Schedule|DFS, BFS, Graph Theory, Topological Sort, Kahns algorithm|Medium|detect the cycle in directed acyclic graph|
+|210. Course Schedule II|DFS, BFS, Graph Theory, Topological Sort, Kahns algorithm|Medium|detect the cycle in directed acyclic graph, if no cycle found, return courses that can be taken in topolical order|
 |19. Remove Nth Node From End of List|Linked List, two pointers|Medium|Set pointers n place apart, iterate paralllelly till the end, left.next=left.next.next|
 |23. Merge k Sorted Lists|Linked List, divide and conquer|Hard|Similar approach to 21 but more optimal approach needed|
 |300. Longest Increasing Subsequence|Dynamic Programming, cache|Medium|Start backwards, for every i, count the rest of j such num[i]<num[j] and cache[i]=max(cache[i], cache[j]+1)|
