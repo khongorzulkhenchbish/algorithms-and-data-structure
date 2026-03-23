@@ -1,17 +1,26 @@
-## Pattern recognition
-
 Find the $k$-th smallest/largest element => Min-Heap / Max-Heap (Priority Queue), Quickselect (Partitioning), Trie
 
-Priority q has O(1) insertion and deletion time.
-With Heat insertion and deletion will be O(logN).
-Heap is a 
-1. COMPLETE binary tree, 
-2. where children nodes values are always higher than the parent node value.
-The max/min value of the heap can be attained on O(1) time.
+#### Heap
 
-Min Heap: top element has the smallest value. From top to bottom, the node values increases.
-Max Heap: top element has the largest value. From top to bottom, the nodes values decreases.
+A heap is a complete binary tree where each parent node has a value less than or equal to (min-heap) or greater than or equal to (max-heap) its children. The min/max value can be accessed in O(1) time.
 
+| Type     | Top Element | Order from Top to Bottom |
+|----------|-------------|--------------------------|
+| Min Heap | Smallest    | Increases                |
+| Max Heap | Largest     | Decreases                |
+
+#### Queue vs. Priority Queue
+
+| Feature          | Queue                          | Priority Queue (Heap)                   |
+|------------------|--------------------------------|-----------------------------------------|
+| Definition      | FIFO (First In, First Out)    | Dequeues based on priority             |
+| How to use      | collections.deque             | heapq.pop(name), heapq.push(name, item)|
+| Insertion       | O(1)                          | O(log N)                               |
+| Deletion        | O(1)                          | O(log N)                               |
+| Lookup          | O(N)                          | O(1) for min/max                       |
+| Key Differences | Strict order by arrival       | Allows priority-based ordering         |
+
+**Note**: Priority Queue is typically heap-based, useful for scheduling tasks.
 
 #### Tree
 Full binary tree: all of the nodes have either 0 or 2 offspring, excluding the leaf nodes.
