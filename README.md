@@ -191,6 +191,7 @@ def nextGreaterElement(nums):
 ## Google
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
+|3. Longest Substring Without Repeating Characters|String, Hash Table, Sliding Window|Medium|Expand as much as possible to the right, update left only after seeing repeated character "[hbca]bde" => "hb[cabde]"|
 |22. Generate parentheses|String, Backtrack|Medium|At every step, we choose either one of '(' and ')'. But we prioritize the open brackets, then the close brackets.|
 |128. Longest Consecutive Sequence|Array, Hashtable|Medium|The intuition is to understand that the list consists of subsets. We can determine "if the current number is the start of the subset" by checking if it's previous number exists or not. If it is we can count by checking if the next numbers are in the original list/set.|
 |198. House robber|Array, Dynamic Programming|Medium|The intuition is to understand at every house, we either rob or skip, but when we skip, we should keep the prev collected amount. Then overall formula currMax = max(prev2+cur, prev1) where [prev2, prev1, cur, curNext, ..]|
