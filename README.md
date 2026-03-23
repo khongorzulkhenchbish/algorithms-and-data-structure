@@ -247,6 +247,7 @@ def nextGreaterElement(nums):
 ## BLIND 150
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
+|23. Merge k Sorted Lists|Linked list, Heap (Priority Queue)|Hard|the heap initially stores the starting values (and their list indices) to prioritize the smallest heads, then iteratively pops the smallest element, adds it to the result, and pushes the next element from that list if available, ensuring the output is sorted|
 |110. Balanced Binary Tree|Binary Tree, DFS|Easy (Medium)|To do it in one traversal, use -1 as extra value to mark unbalanced node. Otherwise, always return the height as max(left, right) subtrees|
 |1148. Count Good Nodes in Binary Tree|Binary Tree, DFS, BFS|Medium (Easy)|Keep track of the current paths maximum as go down the top-bottom direction|
 |167. Two Sum II - Input Array Is Sorted|Array, Two Pointers|Medium|Use two pointers, if the sum is higher than target decrease the right pointer, else increase the left pointer, until the sum is found|
