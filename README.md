@@ -143,9 +143,11 @@ def nextGreaterElement(nums):
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |21. Merge Two Sorted Lists|Linked List|Easy|Imagine: changing the arrow directions, iterate both lists, move the pointers to the next if the element is merged|
+|33. Search in Rotated Sorted Array|Array, Binary Search|Medium|identify which half is sorted, then check if the target falls within that sorted half to decide which side to search|
 |141. Linked List Cycle|Linked List, Floyd's Tortoise and Hare|Easy|Slow and Fast pointer to move ahead, check if on the same node each time|
 |141. Linked List Cycle|Linked List, HashMap|Easy|Iterate, store the node if not seen, return true if node was seen|
 |143. Reorder List|Linked List manipulation|Medium|Find middle point, revert the second part, later iterate both parallelly|
+|153. Find Minimum in Rotated Sorted Array|Array, Binary Search|Medium|compare the middle element with the left element to determine which side contains the rotation point|
 |207. Course Schedule|DFS, BFS, Graph Theory, Topological Sort, Kahns algorithm|Medium|detect the cycle in directed acyclic graph|
 |210. Course Schedule II|DFS, BFS, Graph Theory, Topological Sort, Kahns algorithm|Medium|detect the cycle in directed acyclic graph, if no cycle found, return courses that can be taken in topolical order|
 |19. Remove Nth Node From End of List|Linked List, two pointers|Medium|Set pointers n place apart, iterate paralllelly till the end, left.next=left.next.next|
