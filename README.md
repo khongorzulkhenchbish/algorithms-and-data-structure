@@ -268,3 +268,6 @@ def nextGreaterElement(nums):
 |239. Sliding Window Maximum|Array, Monotonic Queue, Sliding Window|Hard|TODO: Didn't understand well|
 |150. Evaluate Reverse Polish Notation|Array, Stack|Medium|Using stack will make it easier because, we don't know what to do with numbers until we get the operators.|
 |739. Daily Temperatures|Array, Monotonic Stack|Medium|Use monotonic decreasing stack to store colder (day, temp). If you find warmer day, update the time it took to wait "for every pairs in stack that is colder than current". If you encounter colder days, then just store it alongside temp so you can later mark the time difference when you find warmer day for them.|
+
+Contest
+|3880. Minimum Absolute Difference Between Two Values|Array|Easy|The intuition is to understand we are trying to find the minimum dist only. Just focus on the most recent 1 and 2, they will be the closest pairs to be compared|

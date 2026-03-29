@@ -1,0 +1,40 @@
+class Solution:
+    def minAbsoluteDifference(self, nums: list[int]) -> int:
+        # Optimal approach with one pass O(N) and O(1) space
+        # The intuition is to understand we are trying to find the minimum dist only.
+        # Therefore calculating [(1),2,0,1,(2),2] the 1 and 2 at indexes 0, 4 are redundant.
+        # Just focus on the most recent 1 and 2, they will be the closest pairs to be compared.
+        last_1 = -1
+        last_2 = -1
+        mindist = float('inf')
+
+        for i, num in enumerate(nums):
+            if num == 1:
+                if last_2 != -1: # if set
+                    mindist = min(mindist, abs(i-last_2))
+                last_1 = i
+            elif num == 2:
+                if last_1 != -1: # if set
+                    mindist = min(mindist, abs(i-last_1))
+                last_2 = i
+        
+        return -1 if mindist == float('inf') else mindist
+
+
+        # Brute force: [1,2,0,1,2,2] => calculates all 6 variations of pair consisting of 1 and 2
+        # Space: O(N), Time: O(N^2) due to the second loop to calc abs diff
+        # This approach is only okay for input N = 100
+        count1 = []
+        count2 = []
+        for i, num in enumerate(nums):
+            if num == 1:
+                count1.append(i)
+            elif num == 2:
+                count2.append(i)
+
+        mindiff = 101
+        for i in count1:
+            for j in count2:
+                mindiff = min(mindiff, abs(i-j))
+
+        return -1 if mindiff == 101 else mindiff
