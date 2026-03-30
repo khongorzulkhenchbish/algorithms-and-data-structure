@@ -234,13 +234,14 @@ def nextGreaterElement(nums):
 |2812. 2812. Find the Safest Path in a Grid|Matrix, Multi-source BFS, Dijkstra, Priority Queue, Heap|Medium-Hard|994. Rotting Oranges + 778. Swim in a Rising Water|
 |3453. Separate Squares I|Math, Array, Binary Search|Medium|Notice that area will increase as y increases. We should narrow down y in binary search.|
 
-## Design
+## DESIGN
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |1396. Design Underground System|Hashmap, Design|Medium|Use two hastables, one for storing incomplete journeys, other for aggregating the total stops between start and final stations, total time spent in those stations. The average=(totaltime/totalstops)|
 |1570. Dot Product of Two Sparse Vectors|Array, Hash Table, Two Pointers|Medium|Filter nonzeros values in array [[index, value],..]. Then use two pointers to iterate at the same time and calc dot product. (Try not to use hashmap approach, on larger input it takes time to create)|
 |155. Min Stack|Stack, Design|Medium|Use two stacks, keep track of the min elements alongside the original stack elements|
 |304. Range Sum Query 2D - Immutable|Array, Design, Prefix Sum|Medium|We should apply prefix sum on 1D into 2D array across rows and columns such that every row and column contains sum of rectangle formed by 0,0 and row,col. Then on the prefix sum matrix, subtract the left bottom and top right cells and add the overlapping previous diagonal sum.|
+|981. Time Based Key-Value Store|Hash Table, Array, String, Binary Search, Design|Medium|Use hashmap [key]=[(value1, timestamp1)] and use binary search when searching the tuples with higest timestamp|
 
 ## OTHERS
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
