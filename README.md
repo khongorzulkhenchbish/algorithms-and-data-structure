@@ -241,6 +241,7 @@ def nextGreaterElement(nums):
 |1570. Dot Product of Two Sparse Vectors|Array, Hash Table, Two Pointers|Medium|Filter nonzeros values in array [[index, value],..]. Then use two pointers to iterate at the same time and calc dot product. (Try not to use hashmap approach, on larger input it takes time to create)|
 |155. Min Stack|Stack, Design|Medium|Use two stacks, keep track of the min elements alongside the original stack elements|
 |304. Range Sum Query 2D - Immutable|Array, Design, Prefix Sum|Medium|We should apply prefix sum on 1D into 2D array across rows and columns such that every row and column contains sum of rectangle formed by 0,0 and row,col. Then on the prefix sum matrix, subtract the left bottom and top right cells and add the overlapping previous diagonal sum.|
+|355. Design Twitter|Design, Heap, Hash Table|Medium (Hard)|Store follow list for each user in hash set, tweets for each user in hash map, timer can be simply integer order. To remove follower, use discard func instead as it ignores if the user a doesn't follow user b. For get news feed, iterate through the followees tweets, but only pick top 10 then store them in min_heap for each user, this will allow to pop the smallest elem and keep maintaining latest 10 tweets among all followees.|
 |981. Time Based Key-Value Store|Hash Table, Array, String, Binary Search, Design|Medium|Use hashmap [key]=[(value1, timestamp1)] and use binary search when searching the tuples with higest timestamp|
 
 ## OTHERS
