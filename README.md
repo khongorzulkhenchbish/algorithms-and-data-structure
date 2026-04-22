@@ -164,6 +164,7 @@ def nextGreaterElement(nums):
 |338. Counting bits|Bit Manipulation, Dynamic Programming|Easy|Find out the pattern to re-use the previous counted ones in the bit representation|
 |190. Reverse Bits|Bit Manipulation|Easy|at every step in the iteration, take the right most from n then add this to the reverse, while shifting reverse to the left at every step|
 |268. Missing Number|Array, Bit manipulation|Easy|diff between sum-without-missing-one and sum-with-missing-one should print missing one|
+|286. Walls And Gates|Array, Multi-source BFS, Matrix|Medium|first save the first level treasures locations, using that start multi-source BFS until we find a distance that is no longer smaller than current cell distance. Update current cell always with the lates distance.|
 |994. Rotting Oranges|Multi-source BFS, Matrix|Medium|first count fresh oranges, then collect the rotten orange positions in queue, then iterate level by level as minute increases 1 by 1. This will rot neighbors of original rotten oranges all at the same time.|
 
 ## META TOP 50
