@@ -267,6 +267,7 @@ def nextGreaterElement(nums):
 |1148. Count Good Nodes in Binary Tree|Binary Tree, DFS, BFS|Medium (Easy)|Keep track of the current paths maximum as go down the top-bottom direction|
 |167. Two Sum II - Input Array Is Sorted|Array, Two Pointers|Medium|Use two pointers, if the sum is higher than target decrease the right pointer, else increase the left pointer, until the sum is found|
 |42. Trapping Rain Water|Array, Two Pointers|Hard|For each cell, find it's max column to the left and right. After that, [current_water = min(left, right)-curr_height]|
+|560. Subarray sum equals K|Hash Table, Prefix sum|Medium|The intuition is while gathering sums, we can check if the diff between current sum and sum until current exist in the hashmap. It will help to find those subarray that exist in the middle.|
 |567. Permutation in String|Hash Table, Sliding Window|Medium|First form same length frequency list. Then iterate rest of the second string. At each step add the current while removing the leftmost of the sliding window from the frequency list. Use ASCII values for list indexes|
 |3795. Minimum Subarray Length With Distinct Sum At Least Sum k|Array, Two Pointers, Hash Tables, Sliding Window|Medium|Use hashmap to count frequency at each step to the right. Add the subarray sums too, but just once per unique number. When find subarray with k sum, shrink from the left as much as possible.|
 |239. Sliding Window Maximum|Array, Monotonic Queue, Sliding Window|Hard|TODO: Didn't understand well|
