@@ -11,7 +11,7 @@ class Solution:
         left=0
         for right in range(len(s)):
             if s[right] in occurred:
-                left=max(occurred[s[right]], left)
+                left=max(occurred[s[right]], left)  # when "abba", if we don't take max of lefts, then it could miscalc "bba" as valid
         
             maxLen=max(maxLen, right-left+1)
             occurred[s[right]]=right+1
