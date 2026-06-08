@@ -283,4 +283,5 @@ def nextGreaterElement(nums):
 |Problem Name|DS & Algorithm|Difficulty|1-line solution|
 |---------|---------|---------|---------|
 |3880. Minimum Absolute Difference Between Two Values|Array|Easy|The intuition is to understand we are trying to find the minimum dist only. Just focus on the most recent 1 and 2, they will be the closest pairs to be compared|
+|3938. Maximum Path Intersection Sum in a Grid|Prefix Sum, Dynamic Programming, Array|Medium-Hard|track the best sum until current cell, best sum anywhere seen so far. get the max|
 
